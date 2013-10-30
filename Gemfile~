@@ -34,10 +34,10 @@ end
 
 #gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 #                              :github => 'anjlab/bootstrap-rails',
-#                              :branch => '3.0.0'
+                              :branch => '3.0.0'
 
 # ******* Gemas Adicionadas ********
-gem 'less-rails',' 2.4.0'
+gem 'less-rails','~> 2.4.0'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form', '~> 3.0.0.rc'
 
