@@ -1,4 +1,6 @@
 Sep::Application.routes.draw do
+  resources :actestados
+
   resources :tipodocs
 
   resources :titulaciones
