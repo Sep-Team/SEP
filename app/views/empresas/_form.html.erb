@@ -1,0 +1,13 @@
+<%= simple_form_for @empresa, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nit %>
+  <%= f.input :direccion %>
+  <%= f.input :telefono %>
+  <%= f.input :fax %>
+  <%= f.input :email %>
+  <%= f.input :paginaweb %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                empresas_path, :class => 'btn' %>
+  </div>
+<% end %>

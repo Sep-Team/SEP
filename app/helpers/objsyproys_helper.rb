@@ -1,0 +1,2 @@
+module ObjsyproysHelper
+end

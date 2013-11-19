@@ -1,4 +1,18 @@
 Sep::Application.routes.draw do
+  resources :fichas
+
+  resources :programas
+
+  resources :objsyproys
+
+  resources :departamentos
+
+  resources :categorias
+
+  resources :empresas
+
+  resources :jefes
+
   resources :actestados
 
   resources :tipodocs
