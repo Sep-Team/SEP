@@ -1,0 +1,34 @@
+<%= simple_form_for @actividade, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :fecha_inicio %>
+  <%= f.input :fecha_fin %>
+  <%= f.input :descripcion %>
+  <div class="control-group" >
+    <label class="control-label" for="inputName">Categoria</label>
+      <div class="controls ">
+        <%= f.collection_select :categoria_id, Categoria.all, :id, :nombre, :prompt => "Selecione Categoria", :input_html => {:class => "col-sm-2"} %> 
+      </div>
+  </div>
+  <div class="control-group" >
+      <label class="control-label" for="inputName">ObjetivoProyecto</label>
+    <div class="controls ">
+      <%= f.collection_select :objsyproy_id, Objsyproy.all, :id, :nombre, :prompt => "Selecione Objetivo Proyecto", :input_html => {:class => "col-sm-2"} %> 
+    </div>
+  </div>
+  <div class="control-group" >
+    <label class="control-label" for="inputName">Estudiante</label>
+    <div class="controls ">
+      <%= f.collection_select :estudiante_id, Estudiante.all, :id, :nombre1, :prompt => "Selecione Estudiante", :input_html => {:class => "col-sm-2"} %> 
+    </div>
+  </div>
+  <div class="control-group" >
+    <label class="control-label" for="inputName">ActoEstado</label>
+    <div class="controls ">
+      <%= f.collection_select :actEstado_id , Actestado.all, :id, :nombre, :prompt => "Selecione ActEstado", :input_html => {:class => "col-sm-2"} %> 
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                actividades_path, :class => 'btn' %>
+  </div>
+<% end %>

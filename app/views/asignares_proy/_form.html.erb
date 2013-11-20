@@ -1,0 +1,21 @@
+<%= simple_form_for @asignar_proy, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <div class="control-group" >
+     <label class="control-label" for="inputName">Estudiantes</label>
+   <div class="controls">
+       <%= f.collection_select :estudiante_id, Estudiante.all, :id, :nombre1, :prompt => "Selecione Estudiante" %>
+   </div>
+</div>
+
+  <div class="control-group" >
+     <label class="control-label" for="inputName">Objetivo Proyectos</label>
+   <div class="controls">
+       <%= f.collection_select :objsyproy_id, Objsyproy.all, :id, :nombre, :prompt => "Selecione Objetivo Proyectos" %>
+   </div>
+</div>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                asignares_proy_path, :class => 'btn' %>
+  </div>
+<% end %>

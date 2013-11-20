@@ -1,0 +1,48 @@
+<%- model_class = Actividade -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_inicio) %></th>
+      <th><%= model_class.human_attribute_name(:fecha_fin) %></th>
+      <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th><%= model_class.human_attribute_name(:categoria_id) %></th>
+      <th><%= model_class.human_attribute_name(:objsyproy_id) %></th>
+      <th><%= model_class.human_attribute_name(:estudiante_id) %></th>
+      <th><%= model_class.human_attribute_name(:actEstado_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @actividades.each do |actividade| %>
+      <tr>
+        <td><%= link_to actividade.id, actividade_path(actividade) %></td>
+        <td><%= actividade.fecha_inicio %></td>
+        <td><%= actividade.fecha_fin %></td>
+        <td><%= actividade.descripcion %></td>
+        <td><%= actividade.categoria_id %></td>
+        <td><%= actividade.objsyproy_id %></td>
+        <td><%= actividade.estudiante_id %></td>
+        <td><%= actividade.actEstado_id %></td>
+        <td><%=l actividade.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_actividade_path(actividade), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      actividade_path(actividade),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_actividade_path,
+            :class => 'btn btn-primary' %>
