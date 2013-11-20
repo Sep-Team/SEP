@@ -5,7 +5,13 @@
   <%= f.input :cargo %>
   <%= f.input :telefono %>
   <%= f.input :email %>
-  <%= f.input :empresa_id %>
+   <div class="control-group" >
+     <label class="control-label" for="inputName">Empresa</label>
+   <div class="controls">
+       <%= f.collection_select :empresa_id, Empresa.all, :id, :nit, :prompt => "Selecione Empresa" %>
+   </div>
+</div>
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
