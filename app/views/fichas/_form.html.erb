@@ -5,11 +5,9 @@
   <div class="control-group" >
     <label class="control-label" for="inputName">Programa</label>
     <div class="controls ">
-
-      <%= f.collection_select :programa_id, Programa.all, :id, :nombre, :prompt => "Selecione Programa", :input_html => {:class => "col-sm-2"} %> 
-   </div>
+      <%= f.collection_select :programa_id, Programa.all, :id, :nombre, :prompt => "Selecione Programa" %> 
+    </div>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

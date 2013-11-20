@@ -1,4 +1,10 @@
 Sep::Application.routes.draw do
+  resources :asignares_proy
+
+  resources :actividades
+
+  resources :estudiantes
+
   resources :fichas
 
   resources :programas

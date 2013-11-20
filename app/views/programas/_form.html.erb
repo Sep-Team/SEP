@@ -1,33 +1,26 @@
 <%= simple_form_for @programa, :html => { :class => 'form-horizontal' } do |f| %>
-
-
   <%= f.input :nombre %>
   <%= f.input :version %>
   <%= f.input :codigo %>
   <div class="control-group" >
     <label class="control-label" for="inputName">Centro</label>
     <div class="controls ">
-
-      <%= f.collection_select :centro_id, Centro.all, :id, :nombre, :prompt => "Selecione Centro", :input_html => {:class => "col-sm-2"} %> 
-   </div>
+      <%= f.collection_select :centro_id, Centro.all, :id, :nombre, :prompt => "Selecione Centro" %> 
+    </div>
   </div>
-
-    <div class="control-group" >
-     <label class="control-label" for="inputName">Titulacion</label>
-   <div class="controls">
-       <%= f.collection_select :titulacion_id, Titulacion.all, :id, :sigla, :prompt => "Selecione Titulacion", :class => "" %>
-   </div>
-</div>
-
+  <div class="control-group" >
+    <label class="control-label" for="inputName">Titulacion</label>
+    <div class="controls">
+       <%= f.collection_select :titulacion_id, Titulacion.all, :id, :sigla, :prompt => "Selecione Titulacion" %>
+    </div>
+  </div>
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                programas_path, :class => 'btn' %>
+   <%= f.button :submit, :class => 'btn-primary' %>
+   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  programas_path, :class => 'btn' %>
   </div>
-
-
-
 <% end %>
+
 <div class="col-sm-2">
       <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
     </div>

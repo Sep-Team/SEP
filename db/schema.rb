@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119193044) do
+ActiveRecord::Schema.define(version: 20131120164633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,33 @@ ActiveRecord::Schema.define(version: 20131119193044) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "actividades", force: true do |t|
+    t.date     "fecha_inicio"
+    t.date     "fecha_fin"
+    t.string   "descripcion"
+    t.integer  "categoria_id"
+    t.integer  "objsyproy_id"
+    t.integer  "estudiante_id"
+    t.integer  "actEstado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "actividades", ["actEstado_id"], name: "index_actividades_on_actEstado_id", using: :btree
+  add_index "actividades", ["categoria_id"], name: "index_actividades_on_categoria_id", using: :btree
+  add_index "actividades", ["estudiante_id"], name: "index_actividades_on_estudiante_id", using: :btree
+  add_index "actividades", ["objsyproy_id"], name: "index_actividades_on_objsyproy_id", using: :btree
+
+  create_table "asignares_proy", force: true do |t|
+    t.integer  "estudiante_id"
+    t.integer  "objsyproy_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "asignares_proy", ["estudiante_id"], name: "index_asignares_proy_on_estudiante_id", using: :btree
+  add_index "asignares_proy", ["objsyproy_id"], name: "index_asignares_proy_on_objsyproy_id", using: :btree
 
   create_table "categorias", force: true do |t|
     t.string   "nombre"
@@ -55,6 +82,24 @@ ActiveRecord::Schema.define(version: 20131119193044) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "estudiantes", force: true do |t|
+    t.string   "nombre1"
+    t.string   "nombre2"
+    t.string   "apellido1"
+    t.string   "apellido2"
+    t.boolean  "genero"
+    t.string   "documento"
+    t.integer  "ficha_id"
+    t.integer  "jefe_id"
+    t.integer  "tipodoc_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "estudiantes", ["ficha_id"], name: "index_estudiantes_on_ficha_id", using: :btree
+  add_index "estudiantes", ["jefe_id"], name: "index_estudiantes_on_jefe_id", using: :btree
+  add_index "estudiantes", ["tipodoc_id"], name: "index_estudiantes_on_tipodoc_id", using: :btree
 
   create_table "fichas", force: true do |t|
     t.string   "numero"

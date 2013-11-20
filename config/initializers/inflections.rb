@@ -52,7 +52,8 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'actestado','actestados'
   inflect.irregular 'objsyproy', 'objsyproys'
   inflect.irregular 'asignarproy','asignarproys'
-#  inflect.irregular 'telefono1', 'telefonos1'
+  inflect.irregular 'actividad','actividades'
+  inflect.irregular 'asignarProy', 'asignarProys'
 end
 
 
