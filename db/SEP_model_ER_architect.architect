@@ -650,7 +650,7 @@
  <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.8408964152537146" viewportX="23" viewportY="78" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.8408964152537146" viewportX="23" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="28" y="20" bgColor="0xe6d794" fgColor="0xab8b00" rounded="true" dashed="true"/>
   <table-pane table-ref="TAB8" x="352" y="27" bgColor="0xe6d794" fgColor="0xb36d00" rounded="true" dashed="true"/>
   <table-pane table-ref="TAB17" x="652" y="350" bgColor="0xeeeeee" fgColor="0x006633" rounded="true" dashed="true"/>
@@ -662,7 +662,7 @@
   <table-pane table-ref="TAB67" x="353" y="786" bgColor="0xe6d794" fgColor="0xb36d00" rounded="true" dashed="true"/>
   <table-pane table-ref="TAB74" x="53" y="614" bgColor="0xc7d0df" fgColor="0x006633" rounded="true" dashed="true"/>
   <table-pane table-ref="TAB80" x="398" y="202" bgColor="0xe6d794" fgColor="0xb36d00" rounded="true" dashed="true"/>
-  <table-pane table-ref="TAB90" x="938" y="556" bgColor="0xeeeeee" fgColor="0x006633" rounded="true" dashed="true"/>
+  <table-pane table-ref="TAB90" x="705" y="681" bgColor="0xeeeeee" fgColor="0x006633" rounded="true" dashed="true"/>
   <table-pane table-ref="TAB96" x="80" y="273" bgColor="0xe6d794" fgColor="0xb36d00" rounded="true" dashed="true"/>
   <table-pane table-ref="TAB108" x="26" y="761" bgColor="0xe6d794" fgColor="0xb36d00" rounded="true" dashed="true"/>
   <table-pane table-ref="TAB114" x="926" y="177" bgColor="0xeeeeee" fgColor="0x206cff" rounded="true" dashed="true"/>
@@ -684,7 +684,7 @@
   <table-link relationship-ref="REL161" pkConnection="1.0" fkConnection="0.0" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL189" pkConnection="1.0" fkConnection="0.0" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL179" pkConnection="0.15" fkConnection="0.8433734939759037" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL165" pkConnection="0.594059405940594" fkConnection="0.5060240963855421" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL165" pkConnection="0.9010989010989011" fkConnection="0.3465346534653465" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL195" pkConnection="0.5131578947368421" fkConnection="0.48128342245989303" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL193" pkConnection="0.3181818181818182" fkConnection="0.55" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL185" pkConnection="0.059602649006622516" fkConnection="0.05357142857142857" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>

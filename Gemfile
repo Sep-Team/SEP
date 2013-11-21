@@ -21,6 +21,7 @@ end
 gem 'therubyracer', :platforms => :ruby
 gem 'simple_form', '~> 3.0.0.rc'
 gem "sorcery"
+gem "bcrypt-ruby", :require => "bcrypt"
 gem "less-rails"
 gem "cancan"
 gem 'jquery-ui-rails'
@@ -33,8 +34,6 @@ gem 'lazybox', '0.2.3'
 gem "paperclip"
 gem 'mime-types', :require => 'mime/types'
 gem 'rails3-jquery-autocomplete'
-gem 'googlecharts'
-gem 'prawn'
 gem 'mime-types', :require => 'mime/types'
 gem 'remotipart'
 

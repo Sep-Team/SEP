@@ -1,6 +1,6 @@
 class TitulacionesController < ApplicationController
   before_action :set_titulacion, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /titulaciones
   # GET /titulaciones.json
   def index

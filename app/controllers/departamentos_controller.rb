@@ -1,6 +1,6 @@
 class DepartamentosController < ApplicationController
   before_action :set_departamento, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /departamentos
   # GET /departamentos.json
   def index

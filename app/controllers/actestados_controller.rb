@@ -1,6 +1,6 @@
 class ActestadosController < ApplicationController
   before_action :set_actestado, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /actestados
   # GET /actestados.json
   def index

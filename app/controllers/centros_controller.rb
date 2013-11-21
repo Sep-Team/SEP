@@ -1,6 +1,6 @@
 class CentrosController < ApplicationController
   before_action :set_centro, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /centros
   # GET /centros.json
   def index

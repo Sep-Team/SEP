@@ -1,6 +1,6 @@
 class EvaluacionesController < ApplicationController
   before_action :set_evaluacion, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /evaluaciones
   # GET /evaluaciones.json
   def index

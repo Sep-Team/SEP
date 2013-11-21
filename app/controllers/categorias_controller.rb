@@ -1,6 +1,6 @@
 class CategoriasController < ApplicationController
   before_action :set_categoria, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /categorias
   # GET /categorias.json
   def index

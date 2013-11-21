@@ -1,6 +1,6 @@
 class TipodocsController < ApplicationController
   before_action :set_tipodoc, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /tipodocs
   # GET /tipodocs.json
   def index

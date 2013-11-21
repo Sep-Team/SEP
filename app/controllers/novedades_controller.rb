@@ -1,6 +1,6 @@
 class NovedadesController < ApplicationController
   before_action :set_novedad, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /novedades
   # GET /novedades.json
   def index

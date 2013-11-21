@@ -1,6 +1,6 @@
 class ProgramasController < ApplicationController
   before_action :set_programa, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /programas
   # GET /programas.json
   def index

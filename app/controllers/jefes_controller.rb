@@ -1,6 +1,6 @@
 class JefesController < ApplicationController
   before_action :set_jefe, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /jefes
   # GET /jefes.json
   def index

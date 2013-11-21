@@ -1,6 +1,6 @@
 class TipoFactoresController < ApplicationController
   before_action :set_tipo_factor, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /tipo_factores
   # GET /tipo_factores.json
   def index

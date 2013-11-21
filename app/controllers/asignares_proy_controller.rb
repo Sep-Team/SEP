@@ -1,6 +1,6 @@
 class AsignaresProyController < ApplicationController
   before_action :set_asignar_proy, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /asignares_proy
   # GET /asignares_proy.json
   def index

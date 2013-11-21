@@ -1,6 +1,6 @@
 class EstudiantesController < ApplicationController
   before_action :set_estudiante, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /estudiantes
   # GET /estudiantes.json
   def index

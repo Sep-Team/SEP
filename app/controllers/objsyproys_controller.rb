@@ -1,6 +1,6 @@
 class ObjsyproysController < ApplicationController
   before_action :set_objsyproy, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
   # GET /objsyproys
   # GET /objsyproys.json
   def index
