@@ -54,6 +54,12 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'asignarproy','asignarproys'
   inflect.irregular 'actividad','actividades'
   inflect.irregular 'asignarProy', 'asignarProys'
+  inflect.irregular 'asignarProy', 'asignarProys'
+  inflect.irregular 'tipofactor','tipofactores'
+  inflect.irregular 'factor', 'factores'
+  inflect.irregular 'evaluacion', 'evaluaciones'
+  inflect.irregular 'detalleevaluacion', 'detalleevaluaciones'
+  inflect.irregular 'novedad', 'novedades'
 end
 
 

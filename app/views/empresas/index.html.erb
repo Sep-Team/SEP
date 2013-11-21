@@ -6,7 +6,9 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:nit) %></th>
+      <th><%= model_class.human_attribute_name(:dv) %></th>
       <th><%= model_class.human_attribute_name(:direccion) %></th>
       <th><%= model_class.human_attribute_name(:telefono) %></th>
       <th><%= model_class.human_attribute_name(:fax) %></th>
@@ -20,7 +22,9 @@
     <% @empresas.each do |empresa| %>
       <tr>
         <td><%= link_to empresa.id, empresa_path(empresa) %></td>
+        <td><%= empresa.nombre %></td>
         <td><%= empresa.nit %></td>
+        <td><%= empresa.dv %></td>
         <td><%= empresa.direccion %></td>
         <td><%= empresa.telefono %></td>
         <td><%= empresa.fax %></td>

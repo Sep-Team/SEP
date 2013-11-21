@@ -4,4 +4,5 @@ class Estudiante < ActiveRecord::Base
   belongs_to :tipodoc
   has_many :actividades
   has_many :asignares_proy
+  has_many :evaluaciones
 end

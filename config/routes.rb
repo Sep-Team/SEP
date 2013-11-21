@@ -1,4 +1,18 @@
 Sep::Application.routes.draw do
+  resources :novedades
+
+  resources :empresas
+
+  resources :detalle_evaluaciones
+
+  resources :evaluaciones
+
+  resources :tipo_factores
+
+  resources :factores
+
+  resources :areas
+
   resources :asignares_proy
 
   resources :actividades
@@ -14,8 +28,6 @@ Sep::Application.routes.draw do
   resources :departamentos
 
   resources :categorias
-
-  resources :empresas
 
   resources :jefes
 
