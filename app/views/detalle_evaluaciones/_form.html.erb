@@ -1,0 +1,22 @@
+<%= simple_form_for @detalle_evaluacion, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :nota %>
+  <div class="control-group" >
+    <label class="control-label" for="inputName">Evaluaciones</label>
+      <div class="controls ">
+        <%= f.collection_select :evaluacion_id, Evaluacion.all, :id, :fecha_evaluacion, :prompt => "Selecione Fecha_Evaluacion" %> 
+      </div>
+  </div>
+  <div class="control-group" >
+    <label class="control-label" for="inputName">Factores</label>
+      <div class="controls ">
+        <%= f.collection_select :factor_id, Factor.all, :id, :descripcion, :prompt => "Selecione descripcion" %> 
+      </div>
+  </div>
+  <%= f.input :observaciones %>
+  
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                detalle_evaluaciones_path, :class => 'btn' %>
+  </div>
+<% end %>

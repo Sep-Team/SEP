@@ -1,0 +1,20 @@
+<%= simple_form_for @factor, :html => { :class => 'form-horizontal' } do |f| %>
+ <%= f.input :descripcion %>
+  <div class="control-group" >
+    <label class="control-label" for="inputName">Tipo Factor</label>
+      <div class="controls ">
+        <%= f.collection_select :tipofactor_id, TipoFactor.all, :id, :nombre, :prompt => "Tipo Factores" %> 
+      </div>
+  </div>
+  <div class="control-group" >
+    <label class="control-label" for="inputName">Area</label>
+      <div class="controls ">
+        <%= f.collection_select :area_id , Area.all, :id, :nombre, :prompt => "Selecione Area" %> 
+      </div>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                factores_path, :class => 'btn' %>
+  </div>
+<% end %>
