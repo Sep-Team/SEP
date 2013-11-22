@@ -23,7 +23,6 @@ gem 'simple_form', '~> 3.0.0.rc'
 gem "sorcery"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "less-rails"
-gem "cancan"
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-will_paginate'

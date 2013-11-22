@@ -1,0 +1,63 @@
+<div class="user">
+
+      <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+           <h4 class="modal-title">Asociado</h4>
+      </div>
+
+      <div class="modal-body">
+           <div class="col-md-12">
+              <div class="row">
+                  <div class="col-md-12">
+                       <%= image_tag @user.foto.url, :size => "200x200", :class=>"img-rounded" %>
+                  </div>
+              </div>
+              <br/>
+              <div class="row">
+                  <div class="col-md-3"><strong>Nombre:</strong></div>
+                  <div class="col-md-9">
+                       <%= @user.username %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-3"><strong>Telefono:</strong></div>
+                  <div class="col-md-9">
+                       <%= @user.telefono %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-3"><strong>Celular:</strong></div>
+                  <div class="col-md-9">
+                       <%= @user.celular %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-3"><strong>Correo:</strong></div>
+                  <div class="col-md-9">
+                       <%= @user.email %>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-3"><strong>Criadero:</strong></div>
+                  <div class="col-md-9">
+                       <%= @user.criadero %>
+                  </div>
+              </div>
+              <div class="row">
+                   <div class="col-md-3"><strong>Ciudad:</strong></div>
+                   <div class="col-md-9">
+                       <%= @user.ciudad %>
+                  </div>
+              </div>
+              <div class="row">
+                   <div class="col-md-3"><strong>Línea:</strong></div>
+                   <div class="col-md-9">
+                       <%= @user.linea.nombre rescue nil %>
+                  </div>
+              </div>
+           </div>
+      </div>
+
+</div>
+
+

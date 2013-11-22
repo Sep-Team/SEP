@@ -1,0 +1,99 @@
+<%= simple_form_for(@user, :html => { :multipart => true, :remote => true }) do |f| %>
+
+  <div  class='responsive'>
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+             <h3>Datos Básicos Asociado</h3>
+        </div>
+
+        <div class="modal-body">
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <% if @user.errors.any? %>
+                        <div class="error_messages">
+                          <h2>Form is invalid</h2>
+                          <ul>
+                            <% for message in @user.errors.full_messages %>
+                              <li><%= message %></li>
+                            <% end %>
+                          </ul>
+                        </div>
+                    <% end %>
+
+                    <div class="row">
+                        <div class="col-md-4">Email</div>
+                        <div class="col-md-4">Contraseña</div>
+                        <div class="col-md-4">Confirmar Contraseña</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"><%= f.input :email, :label => false %></div>
+                        <div class="col-md-4"><%= f.input :password, :label => false %></div>
+                        <div class="col-md-4"><%= f.input :password_confirmation, :label => false %></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">Nombres y Apellidos Completos</div>
+                        <div class="col-md-6">Nombre del Criadero</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                             <%= f.input :username, :label => false %>
+                        </div>
+                        <div class="col-md-6">
+                             <%= f.input :criadero, :label => false %> 
+                        </div>
+                    </div>
+                    <div class="row">
+                          <div class="col-md-4">Teléfono</div>
+                          <div class="col-md-3">Celular</div>
+                          <div class="col-md-5">Línea</div>
+                    </div>
+                    <div class="row">
+                          <div class="col-md-4"><%= f.input :telefono, :label => false %></div>
+                          <div class="col-md-3"><%= f.input :celular, :label => false %></div>
+                          <div class="col-md-5"> <%= f.association :linea, collection: Linea.all(order: 'nombre'), :label => false %></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">Ciudad</div>
+                        <div class="col-md-4">Foto</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"><%= f.input :ciudad, :label => false %></div>
+                        <div class="col-md-4"><%= f.input :foto, :as => :file, :label => false %></div>
+                    </div>
+
+                    <div class="row">
+                       <div class="col-md-10">
+                            <% if can? :update, Role %>
+                              <div class="well well-small">
+                                 <% for role in Role.all %>
+                                       <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+                                       <%= role.name %>
+                                       <% if role.id % 4 == 0 %> 
+                                             <br>
+                                       <% end %>
+                                 <% end %>
+                                 <%= hidden_field_tag "user[role_ids][]", "" %>
+                              </div>
+                            <% end %>
+                       </div>
+                      
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id='modal-footer' >
+            <%= f.submit "Guardar", :class => 'btn btn-primary' %> 
+        </div>
+
+  </div>
+
+<% end %>
+
+
