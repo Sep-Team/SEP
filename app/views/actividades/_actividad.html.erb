@@ -1,0 +1,17 @@
+<tr id=<%= "actividad_#{actividad.id}" %>>
+	<td><%= actividad.id %></td>
+	<td><%= actividad.fecha_inicio %></td>
+	<td><%= actividad.estudiante_id %></td>
+	<td><%= actividad.objsyproy_id %></td>
+	<td><%= actividad.categoria_id %></td>
+	<td><%= actividad.actEstado_id %></td>
+	<td><%= actividad.fecha_fin %></td>
+
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), actividad, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_actividad_path(actividad), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+
