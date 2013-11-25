@@ -1,2 +1,20 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h3>Datos Usuarios</h3>
+    <table class="table table-hover"  >
+        <thead>
+            <tr>
+          	  <th >id</th>
+          	  <th >Mi Usuario</th>
+          	  <th >Email</th>
+          	  <th >Acciones</th>      
+        	</tr>
+        </thead>
+        <tbody><%= render @users %></tbody>
+        <tfoot>
+           <tr>
+	            <td>
+	              <%= link_to image_tag('Crud/save.png'),  new_user_path,  :remote => true %>
+	            </td>
+            </tr>
+        </tfoot>
+    </table>
+      

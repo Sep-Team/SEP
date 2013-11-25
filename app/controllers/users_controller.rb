@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
-    before_filter :require_login
+
+  before_action :require_login, [:show, :edit, :update, :destroy, :create]
+  
   def index
+    @users = User.all
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -12,30 +16,30 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      redirect_to root_url, :notice => "Signed up!"
-    else
-      render :new
-    end
+    render :action => :new unless @user.save
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+    render :action => :edit unless @user.update_attributes(user_params)
   end
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :username)
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :username)
+  end
 end

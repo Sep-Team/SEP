@@ -1,16 +1,11 @@
 <tr id=<%= "user_#{user.id}" %>>
-	<td><%= truncate user.username %></td>
-	<td><%= user.telefono %></td>
-	<td><%= user.celular %></td>
-	<td><%= user.criadero %></td>
-	<td><%= link_to image_tag('glyphicons_051_eye_open.png', 
-		    :title => "Mostrar Usuario"), user, :remote => true %>
-        <% if can? :update, user %>
-              <%= link_to image_tag("glyphicons_151_edit.png", 
-                  :title => "editar usuario"), 
-                  edit_user_path(user), :remote => true %>
-        <% end %>
-
+	<td><%= user.id %></td>
+	<td><%= user.username %></td>
+	<td><%= user.email %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), user,     :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_user_path(user),  :remote => true,
+          :class => 'btn btn-mini'%>
 	</td>
 </tr>
 
