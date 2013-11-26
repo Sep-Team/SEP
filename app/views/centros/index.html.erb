@@ -1,40 +1,21 @@
-<%- model_class = Centro -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:codigo) %></th>
-      <th><%= model_class.human_attribute_name(:nombre) %></th>
-      <th><%= model_class.human_attribute_name(:direccion) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @centros.each do |centro| %>
-      <tr>
-        <td><%= link_to centro.id, centro_path(centro) %></td>
-        <td><%= centro.codigo %></td>
-        <td><%= centro.nombre %></td>
-        <td><%= centro.direccion %></td>
-        <td><%=l centro.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_centro_path(centro), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      centro_path(centro),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_centro_path,
-            :class => 'btn btn-primary' %>
+<h3>Datos Centros</h3>
+    <table class="table table-hover"  >
+        <thead>
+            <tr>
+              <th >id</th>
+              <th >Nombres</th>
+              <th >Dirección</th>
+              <th >Codigos</th>  
+              <th >Acciones</th>      
+          </tr>
+        </thead>
+        <tbody><%= render @centros %></tbody>
+        <tfoot>
+           <tr>
+              <td>
+                <%= link_to image_tag('Crud/save.png'),  new_centro_path,  :remote => true %>
+              </td>
+            </tr>
+        </tfoot>
+    </table>
+      

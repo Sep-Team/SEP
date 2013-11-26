@@ -1,74 +1,45 @@
 class DepartamentosController < ApplicationController
-  before_action :set_departamento, only: [:show, :edit, :update, :destroy]
-  before_filter :require_login
-  # GET /departamentos
-  # GET /departamentos.json
+  
+  before_action :set_departamento, :require_login, only: [:show, :edit, :update, :destroy]
+  
   def index
     @departamentos = Departamento.all
   end
 
-  # GET /departamentos/1
-  # GET /departamentos/1.json
   def show
+    @departamento = Departamento.find(params[:id])
   end
 
-  # GET /departamentos/new
   def new
     @departamento = Departamento.new
   end
 
-  # GET /departamentos/1/edit
   def edit
+    @departamento = Departamento.find(params[:id])
   end
 
-  # POST /departamentos
-  # POST /departamentos.json
   def create
     @departamento = Departamento.new(departamento_params)
-
-    respond_to do |format|
-      if @departamento.save
-        format.html { redirect_to @departamento, notice: 'Departamento was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @departamento }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @departamento.errors, status: :unprocessable_entity }
-      end
-    end
+    render :action => :new unless @departamento.save
   end
 
-  # PATCH/PUT /departamentos/1
-  # PATCH/PUT /departamentos/1.json
   def update
-    respond_to do |format|
-      if @departamento.update(departamento_params)
-        format.html { redirect_to @departamento, notice: 'Departamento was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @departamento.errors, status: :unprocessable_entity }
-      end
-    end
+    @departamento = Departamento.find(params[:id])
+    render :action => :edit unless @departamento.update_attributes(departamento_params)
   end
 
-  # DELETE /departamentos/1
-  # DELETE /departamentos/1.json
   def destroy
-    @departamento.destroy
-    respond_to do |format|
-      format.html { redirect_to departamentos_url }
-      format.json { head :no_content }
-    end
+   @departamento = Departamento.find(params[:id])
+   @departamento.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_departamento
-      @departamento = Departamento.find(params[:id])
-    end
+    
+  def set_departamento
+    @departamento = Departamento.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def departamento_params
-      params.require(:departamento).permit(:nombre, :descripcion)
-    end
+  def departamento_params
+    params.require(:departamento).permit(:nombre, :descripcion)
+  end
 end

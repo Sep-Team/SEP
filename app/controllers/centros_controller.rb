@@ -1,74 +1,44 @@
 class CentrosController < ApplicationController
-  before_action :set_centro, only: [:show, :edit, :update, :destroy]
-  before_filter :require_login
-  # GET /centros
-  # GET /centros.json
+  before_action :set_centro,:require_login, only: [:show, :edit, :update, :destroy]
+ 
   def index
     @centros = Centro.all
   end
 
-  # GET /centros/1
-  # GET /centros/1.json
   def show
+    @centro = Centro.find(params[:id])
   end
 
-  # GET /centros/new
   def new
     @centro = Centro.new
   end
 
-  # GET /centros/1/edit
   def edit
+    @centro = Centro.find(params[:id])
   end
 
-  # POST /centros
-  # POST /centros.json
   def create
     @centro = Centro.new(centro_params)
-
-    respond_to do |format|
-      if @centro.save
-        format.html { redirect_to @centro, notice: 'Centro was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @centro }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @centro.errors, status: :unprocessable_entity }
-      end
-    end
+    render :action => :new unless @centro.save
   end
 
-  # PATCH/PUT /centros/1
-  # PATCH/PUT /centros/1.json
   def update
-    respond_to do |format|
-      if @centro.update(centro_params)
-        format.html { redirect_to @centro, notice: 'Centro was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @centro.errors, status: :unprocessable_entity }
-      end
-    end
+    @centro = Centro.find(params[:id])
+    render :action => :edit unless @centro.update_attributes(centro_params)
   end
 
-  # DELETE /centros/1
-  # DELETE /centros/1.json
   def destroy
+    @centro = Centro.find(params[:id])
     @centro.destroy
-    respond_to do |format|
-      format.html { redirect_to centros_url }
-      format.json { head :no_content }
-    end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_centro
-      @centro = Centro.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def centro_params
-      params.require(:centro).permit(:codigo, :nombre, :direccion)
-    end
+  def set_centro
+    @centro = Centro.find(params[:id])
+  end
+
+  def centro_params
+    params.require(:centro).permit(:codigo, :nombre, :direccion)
+  end
 end

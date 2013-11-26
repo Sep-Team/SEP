@@ -1,9 +1,25 @@
-<%= simple_form_for @departamento, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :nombre %>
-  <%= f.input :descripcion %>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                departamentos_path, :class => 'btn' %>
+<%= simple_form_for(@departamento, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Categorias</h3></h4>
+        </div><br>
+          <div class="row">
+            <div class="col-md-4">
+             Nombres:
+            </div>
+            <div class="col-md-6">
+            	 <%= f.input :nombre, :label => false,  :required => true  %>
+            </div>
+            <div class="col-md-4">
+              Descripción:
+            </div>
+            <div class="col-md-6">
+             <%= f.input :descripcion, :label => false,  :required => true %>
+        </div>
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>
 <% end %>
