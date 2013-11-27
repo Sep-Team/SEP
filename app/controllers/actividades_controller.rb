@@ -1,6 +1,6 @@
 class ActividadesController < ApplicationController
   before_action :set_actividad, only: [:show, :edit, :update, :destroy]
- 
+  before_filter :require_login
   
   def index
     @actividades = Actividad.all

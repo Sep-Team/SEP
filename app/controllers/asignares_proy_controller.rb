@@ -1,7 +1,8 @@
 class AsignaresProyController < ApplicationController
   
   before_action :set_asignar_proy,:require_login, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
+  
   def index
     @asignares_proy = AsignarProy.all
   end

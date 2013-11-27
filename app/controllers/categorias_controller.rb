@@ -1,6 +1,6 @@
 class CategoriasController < ApplicationController
   before_action :set_categoria, :require_login, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
 
   def index
     @categorias = Categoria.all

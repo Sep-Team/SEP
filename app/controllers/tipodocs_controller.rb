@@ -1,7 +1,8 @@
 class TipodocsController < ApplicationController
 
   before_action :set_tipodoc, :require_login, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
+  
   def index
     @tipodocs = Tipodoc.all
   end

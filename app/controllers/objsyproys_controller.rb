@@ -1,7 +1,8 @@
 class ObjsyproysController < ApplicationController
 
   before_action :set_objsyproy, :require_login, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
+  
   def index
     @objsyproys = Objsyproy.all
   end

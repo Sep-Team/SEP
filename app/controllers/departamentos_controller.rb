@@ -1,5 +1,6 @@
 class DepartamentosController < ApplicationController
   
+  before_filter :require_login
   before_action :set_departamento, :require_login, only: [:show, :edit, :update, :destroy]
   
   def index

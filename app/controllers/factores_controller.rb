@@ -1,7 +1,8 @@
 class FactoresController < ApplicationController
 
   before_action :set_factor, :require_login, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login
+  
   def index
     @factores = Factor.all
   end

@@ -12,10 +12,9 @@
    </div>
 	    <%= render 'layouts/header' %>
 	    <div class="container">
-	       <%= render 'layouts/messages' %>
 	      <div class='container'>
 	         <%= yield %>
-	         <%= render 'layouts/footer' %>
+	          <%= render 'layouts/messages', flash: flash %>
 	    </div>
 	  </body>
 </html>

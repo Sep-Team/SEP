@@ -1,6 +1,7 @@
 class EstudiantesController < ApplicationController
 
   before_action :set_estudiante,  :require_login, only: [:show, :edit, :update, :destroy]
+  before_filter :require_login
   
   def index
     @estudiantes = Estudiante.all

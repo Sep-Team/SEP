@@ -1,7 +1,8 @@
 class TipoFactoresController < ApplicationController
 
   before_action :set_tipo_factor, :require_login, only: [:show, :edit, :update, :destroy]
- 
+  before_filter :require_login
+
   def index
     @tipo_factores = TipoFactor.all
   end

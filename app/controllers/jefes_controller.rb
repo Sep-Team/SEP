@@ -1,7 +1,8 @@
 class JefesController < ApplicationController
 
   before_action :set_jefe, :require_login, only: [:show, :edit, :update, :destroy]
- 
+  before_filter :require_login
+
   def index
     @jefes = Jefe.all
   end

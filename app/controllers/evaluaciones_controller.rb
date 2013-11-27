@@ -1,7 +1,8 @@
 class EvaluacionesController < ApplicationController
   
   before_action :set_evaluacion, :require_login, only: [:show, :edit, :update, :destroy]
- 
+  before_filter :require_login
+  
   def index
     @evaluaciones = Evaluacion.all
   end

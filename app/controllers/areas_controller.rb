@@ -1,6 +1,8 @@
 class AreasController < ApplicationController
-  before_action :set_area, :require_login, only: [:show, :edit, :update, :destroy]
   
+  before_action :set_area, :require_login, only: [:show, :edit, :update, :destroy]
+  before_filter :require_login
+
   def index
     @areas = Area.all
   end
