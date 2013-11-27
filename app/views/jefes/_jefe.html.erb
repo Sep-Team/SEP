@@ -5,7 +5,7 @@
 	<td><%= jefe.cargo %></td>
 	<td><%= jefe.telefono %></td>
 	<td><%= jefe.email %></td>
-	<td><%= jefe.empresa_id %></td>
+	<td><%= jefe.empresa.nombre %></td>
 	<td> 
 		<%= link_to  image_tag('Crud/mostrar.png'), jefe, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_jefe_path(jefe), :remote => true,

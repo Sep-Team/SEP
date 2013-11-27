@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20131121194325) do
     t.string   "apellido1"
     t.string   "apellido2"
     t.boolean  "genero"
+    t.string   "email"
     t.string   "documento"
     t.integer  "ficha_id"
     t.integer  "jefe_id"

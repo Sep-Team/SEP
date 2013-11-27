@@ -6,6 +6,7 @@ class CreateEstudiantes < ActiveRecord::Migration
       t.string :apellido1
       t.string :apellido2
       t.boolean :genero
+      t.string :email
       t.string :documento
       t.references :ficha, index: true
       t.references :jefe, index: true

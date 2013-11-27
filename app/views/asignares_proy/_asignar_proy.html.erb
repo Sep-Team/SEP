@@ -1,7 +1,7 @@
 <tr id=<%= "asignar_proy_#{asignar_proy.id}" %>>
 	<td><%= asignar_proy.id %></td>
-	<td><%= asignar_proy.estudiante_id %></td>
-	<td><%= asignar_proy.objsyproy_id %></td>
+	<td><%= asignar_proy.estudiante.nombre1 %></td>
+	<td><%= asignar_proy.objsyproy.nombre %></td>
 	<td> 
 		<%= link_to  image_tag('Crud/mostrar.png'), asignar_proy, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_asignar_proy_path(asignar_proy), :remote => true,

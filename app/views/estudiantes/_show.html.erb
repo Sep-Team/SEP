@@ -28,9 +28,13 @@
         <td><b class="pull-right">Genero: </b></td>
         <td><%= @estudiante.genero %></td>
       </tr>
+      <tr>
+        <td><b class="pull-right">Email: </b></td>
+        <td><%= @estudiante.email %></td>
+      </tr>
        <tr>
         <td><b class="pull-right">TipoDocumento: </b></td>
-        <td><%= @estudiante.tipodoc_id %></td>
+        <td><%= @estudiante.tipodoc.sigla %></td>
       </tr>
       <tr>
         <td><b class="pull-right">#Documento: </b></td>
@@ -38,11 +42,11 @@
       </tr>
        <tr>
         <td><b class="pull-right">Fichas: </b></td>
-        <td><%= @estudiante.ficha_id %></td>
+        <td><%= @estudiante.ficha.numero %></td>
       </tr>
        <tr>
         <td><b class="pull-right">Jefes: </b></td>
-        <td><%= @estudiante.jefe_id %></td>
+        <td><%= @estudiante.jefe.nombres %></td>
       </tr>
     </table>
     <div class="modal-footer">
