@@ -1,0 +1,13 @@
+<tr id=<%= "objsyproy_#{objsyproy.id}" %>>
+	<td><%= objsyproy.id %></td>
+	<td><%= objsyproy.nombre %></td>
+	<td><%= objsyproy.departamento_id %></td>
+	<td><%= objsyproy.descripcion %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), objsyproy, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_objsyproy_path(objsyproy), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+

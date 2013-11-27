@@ -1,0 +1,13 @@
+<tr id=<%= "factor_#{factor.id}" %>>
+	<td><%= factor.id %></td>
+	<td><%= factor.tipofactor_id %></td>
+	<td><%= factor.area_id %></td>
+	<td><%= factor.descripcion %></td>
+	<td> 
+		<%= link_to  image_tag('Crud/mostrar.png'), factor, :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_factor_path(factor), :remote => true,
+          :class => 'btn btn-mini'%>
+	</td>
+</tr>
+
+
