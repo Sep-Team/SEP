@@ -5,7 +5,7 @@ class CreateNovedades < ActiveRecord::Migration
       t.string :descripcion
       t.string :implicados
       t.references :user, index: true
-      t.references :actEstado, index: true
+      t.references :actestado, index: true
 
       t.timestamps
     end

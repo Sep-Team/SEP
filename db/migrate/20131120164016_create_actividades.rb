@@ -7,7 +7,7 @@ class CreateActividades < ActiveRecord::Migration
       t.references :categoria, index: true
       t.references :objsyproy, index: true
       t.references :estudiante, index: true
-      t.references :actEstado, index: true
+      t.references :actestado, index: true
 
       t.timestamps
     end

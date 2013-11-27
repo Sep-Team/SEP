@@ -41,6 +41,6 @@ class FactoresController < ApplicationController
   end
 
   def factor_params
-    params.require(:factor).permit(:area_id, :tipofactor_id, :descripcion)
+    params.require(:factor).permit(:area_id, :tipo_factor_id, :descripcion)
   end
 end

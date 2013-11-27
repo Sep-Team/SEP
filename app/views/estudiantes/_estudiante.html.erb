@@ -6,10 +6,10 @@ estudiante<tr id=<%= "estudiante_#{estudiante.id}" %>>
 	<td><%= estudiante.apellido1 %></td>
 	<td><%= estudiante.genero %></td>
 	<td><%= estudiante.email %></td>	
-    <td><%= estudiante.tipodoc_id %></td>
+    <td><%= estudiante.tipodoc.sigla %></td>
 	<td><%= estudiante.documento %></td>
-	<td><%= estudiante.ficha_id %></td>	
-    <td><%= estudiante.jefe_id %></td>
+	<td><%= estudiante.ficha.numero %></td>	
+    <td><%= estudiante.jefe.nombres %></td>
 	<td> 
 		<%= link_to  image_tag('Crud/mostrar.png'), estudiante, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_estudiante_path(estudiante), :remote => true,

@@ -1,6 +1,5 @@
 class ActestadosController < ApplicationController
-  before_action :set_actestado,:require_login, only: [:show, :index, :edit, :update, :destroy]
-  before_filter :require_login
+  before_action :set_actestado,:require_login, only: [:show, :edit, :update, :destroy]
   def index
     @actestados = Actestado.all
   end

@@ -42,6 +42,6 @@ class NovedadesController < ApplicationController
   end
 
   def novedad_params
-    params.require(:novedad).permit(:fecha_ocurrencia, :descripcion, :implicados, :user_id, :actEstado_id)
+    params.require(:novedad).permit(:fecha_ocurrencia, :descripcion, :implicados, :user_id, :actestado_id)
   end
 end
