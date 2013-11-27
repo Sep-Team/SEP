@@ -1,27 +1,55 @@
-<%= simple_form_for @evaluacion, :html => { :class => 'form-horizontal' } do |f| %>
-
-  <div class="control-group" >
-    <label class="control-label" for="inputName">Estudiante</label>
-      <div class="controls ">
-        <%= f.collection_select :estudiante_id, Estudiante.all, :id, :nombre1, :prompt => "Selecione Estudiante" %> 
+<%= simple_form_for(@evaluacion, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Evaluacion</h3></h4>
+        </div><br>
+          <div class="row">
+            <div class="col-md-4">
+             Estudiante:
+            </div>
+            <div class="col-md-6">
+                <%= f.collection_select :estudiante_id, Estudiante.all, :id, :nombre1, :prompt => "Selecione Estudiante", :label => false,  :required => true %> 
+            </div>
+            <div class="col-md-4">
+              Jefes:
+            </div>
+            <div class="col-md-6">
+               <%= f.collection_select :jefe_id, Jefe.all, :id, :nombres, :prompt => "Selecione Jefes", :label => false,  :required => true %> 
+            </div>
+            <div class="col-md-4">
+              FechaInicio:
+            </div>
+            <div class="col-md-6">
+              <%= f.input :fecha_inicio, :label => false,  :required => true  %>
+           </div>
+           <div class="col-md-4">
+              FechaEvaluación:
+            </div>
+            <div class="col-md-6">
+              <%= f.input :fecha_evaluacion, :label => false,  :required => true  %>
+           </div>
+           <div class="col-md-4">
+              AspectosPositivos:
+            </div>
+            <div class="col-md-6">
+              <%= f.input :aspectos_positivos, :label => false,  :required => true  %>
+           </div>
+           <div class="col-md-4">
+              AspectosNegativos:
+            </div>
+            <div class="col-md-6">
+              <%= f.input :aspectos_negativos, :label => false,  :required => true  %>
+           </div>
+           <div class="col-md-4">
+              FechaFin:
+            </div>
+            <div class="col-md-6">
+              <%= f.input :fecha_fin, :label => false,  :required => true  %>
+           </div>
+        </div>
+        <div class="modal-footer">
+        <%= f.submit "guardar", :class => 'btn btn-primary' %>
+        <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
       </div>
-  </div>
-   <div class="control-group" >
-    <label class="control-label" for="inputName">Jefes</label>
-      <div class="controls ">
-        <%= f.collection_select :jefe_id, Jefe.all, :id, :nombres, :prompt => "Selecione Jefes" %> 
-      </div>
-  </div>
-  <%= f.input :fecha_inicio %>
-  <%= f.input :fecha_evaluacion %>
-  <%= f.input :aspectos_positivos %>
-  <%= f.input :aspectos_negativos %>
-   <%= f.input :fecha_fin %>
-
-  
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                evaluaciones_path, :class => 'btn' %>
-  </div>
 <% end %>

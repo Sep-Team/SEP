@@ -1,20 +1,32 @@
-<%= simple_form_for @factor, :html => { :class => 'form-horizontal' } do |f| %>
- <%= f.input :descripcion %>
-  <div class="control-group" >
-    <label class="control-label" for="inputName">Tipo Factor</label>
-      <div class="controls ">
-        <%= f.collection_select :tipofactor_id, TipoFactor.all, :id, :nombre, :prompt => "Tipo Factores" %> 
-      </div>
+<%= simple_form_for(@factor, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Factores</h3></h4>
+        </div><br>
+          <div class="row">
+            <div class="col-md-4">
+             TipoFactores:
+            </div>
+            <div class="col-md-6">
+              <%= f.collection_select :tipofactor_id, TipoFactor.all, :id, :nombre, :prompt => "Tipo Factores", :label => false,  :required => true %></br></br>
+            </div>
+            <div class="col-md-4">
+              Areas:
+            </div>
+            <div class="col-md-6">
+               <%= f.collection_select :area_id , Area.all, :id, :nombre, :prompt => "Selecione Area", :label => false,  :required => true  %></br></br>
+            </div>
+             <div class="col-md-4">
+              Descripción:
+            </div>
+            <div class="col-md-6">
+              <%= f.input :descripcion, :label => false,  :required => true %>
+            </div>
+        </div>
   </div>
-  <div class="control-group" >
-    <label class="control-label" for="inputName">Area</label>
-      <div class="controls ">
-        <%= f.collection_select :area_id , Area.all, :id, :nombre, :prompt => "Selecione Area" %> 
-      </div>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                factores_path, :class => 'btn' %>
+  <div class="modal-footer">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>
 <% end %>

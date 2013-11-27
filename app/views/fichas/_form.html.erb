@@ -1,16 +1,38 @@
-<%= simple_form_for @ficha, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :numero %>
-  <%= f.input :fecha_inicio_practicas %>
-  <%= f.input :fecha_fin_practicas %>
-  <div class="control-group" >
-    <label class="control-label" for="inputName">Programa</label>
-    <div class="controls ">
-      <%= f.collection_select :programa_id, Programa.all, :id, :nombre, :prompt => "Selecione Programa" %> 
-    </div>
+<%= simple_form_for(@ficha, :html => { :multipart => true, :remote => true }) do |f| %>
+ <div class="user">
+    <div class="modal-header">
+       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <h4 class="modal-title"><h3>Datos Fichas</h3></h4>
+        </div><br>
+          <div class="row">
+            <div class="col-md-4">
+             #Fichas:
+            </div>
+            <div class="col-md-6">
+             <%= f.input :numero, :label => false,  :required => true   %>
+            </div>
+            <div class="col-md-4">
+              FechaInicioPracticas:
+            </div>
+            <div class="col-md-6">
+               <%= f.input :fecha_inicio_practicas, :label => false,  :required => true %>
+            </div>
+             <div class="col-md-4">
+              Programas:
+            </div>
+            <div class="col-md-6">
+              <%= f.collection_select :programa_id, Programa.all, :id, :nombre, :prompt => "Selecione Programa", :label => false,  :required => true %></br></br>
+            </div>
+                <div class="col-md-4">
+              FechaFinPracticas:
+            </div>
+            <div class="col-md-6">
+              <%= f.input :fecha_fin_practicas, :label => false,  :required => true %>
+            </div>
+        </div>
   </div>
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                fichas_path, :class => 'btn' %>
+  <div class="modal-footer">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
   </div>
 <% end %>

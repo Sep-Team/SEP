@@ -1,20 +1,29 @@
 <div class="modal-header">
   <button  class="close" onclick="$.lazybox.close()">&times;</button>
-  <h3>Areas</h3>
+  <h3>Fichas</h3>
 </div>
   <div class="modal-body">
     <table class="table table-striped table-condensed">
       <tr>
         <td><b class="pull-right">ID: </b></td>
-        <td><%= @area.id %></td>
+        <td><%= @ficha.id %></td>
       </tr>
       <tr>
-        <td><b class="pull-right">Nombre: </b></td>
-        <td><%= @area.nombre %></td>
+        <td><b class="pull-right">#Ficha: </b></td>
+        <td><%= @ficha.numero %></td>
       </tr>
       <tr>
-        <td><b class="pull-right">Siglas: </b></td>
-        <td><%= @area.sigla %></td>
+        <td><b class="pull-right">FechasInicioPracticas: </b></td>
+        <td><%= @ficha.fecha_inicio_practicas %></td>
+      </tr>
+
+         <tr>
+        <td><b class="pull-right">Programas: </b></td>
+        <td><%= @ficha.programa_id  %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">FechaFinPracticas: </b></td>
+        <td><%= @ficha.fecha_fin_practicas %></td>
       </tr>
     </table>
     <div class="modal-footer">

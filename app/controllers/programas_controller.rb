@@ -1,74 +1,45 @@
 class ProgramasController < ApplicationController
-  before_action :set_programa, only: [:show, :edit, :update, :destroy]
-  before_filter :require_login
-  # GET /programas
-  # GET /programas.json
+
+  before_action :set_programa,  :require_login, only: [:show, :edit, :update, :destroy]
+
   def index
     @programas = Programa.all
   end
 
-  # GET /programas/1
-  # GET /programas/1.json
   def show
+    @programa = Programa.find(params[:id])
   end
 
-  # GET /programas/new
   def new
     @programa = Programa.new
   end
 
-  # GET /programas/1/edit
   def edit
+    @programa = Programa.find(params[:id])
   end
 
-  # POST /programas
-  # POST /programas.json
   def create
     @programa = Programa.new(programa_params)
-
-    respond_to do |format|
-      if @programa.save
-        format.html { redirect_to @programa, notice: 'Programa was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @programa }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @programa.errors, status: :unprocessable_entity }
-      end
-    end
+    render :action => :new unless @programa.save
   end
 
-  # PATCH/PUT /programas/1
-  # PATCH/PUT /programas/1.json
   def update
-    respond_to do |format|
-      if @programa.update(programa_params)
-        format.html { redirect_to @programa, notice: 'Programa was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @programa.errors, status: :unprocessable_entity }
-      end
-    end
+    @programa = Programa.find(params[:id])
+    render :action => :edit unless @programa.update_attributes(programa_params)
   end
 
-  # DELETE /programas/1
-  # DELETE /programas/1.json
   def destroy
-    @programa.destroy
-    respond_to do |format|
-      format.html { redirect_to programas_url }
-      format.json { head :no_content }
-    end
+   @programa = Programa.find(params[:id])
+   @programa.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_programa
-      @programa = Programa.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def programa_params
-      params.require(:programa).permit(:nombre, :version, :codigo, :centro_id, :titulacion_id)
-    end
+  def set_programa
+    @programa = Programa.find(params[:id])
+  end
+
+  def programa_params
+    params.require(:programa).permit(:nombre, :version, :codigo, :centro_id, :titulacion_id)
+  end
 end
