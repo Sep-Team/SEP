@@ -1,7 +1,7 @@
 <tr id=<%= "objsyproy_#{objsyproy.id}" %>>
 	<td><%= objsyproy.id %></td>
 	<td><%= objsyproy.nombre %></td>
-	<td><%= objsyproy.departamento_id %></td>
+	<td><%= objsyproy.departamento.nombre %></td>
 	<td><%= objsyproy.descripcion %></td>
 	<td> 
 		<%= link_to  image_tag('Crud/mostrar.png'), objsyproy, :remote => true, :class => 'btn btn-mini' %>

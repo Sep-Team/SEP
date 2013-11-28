@@ -3,8 +3,8 @@
 	<td><%= programa.nombre %></td>
 	<td><%= programa.version %></td>
 	<td><%= programa.codigo %></td>
-	<td><%= programa.centro_id %></td>
-	<td><%= programa.titulacion_id %></td>
+	<td><%= programa.centro.nombre %></td>
+	<td><%= programa.titulacion.descripcion %></td>
 	<td> 
 		<%= link_to  image_tag('Crud/mostrar.png'), programa, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_programa_path(programa), :remote => true,
