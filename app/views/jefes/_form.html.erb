@@ -39,7 +39,7 @@
               Empresas:
             </div>
             <div class="col-md-6">
-             <%= f.collection_select :empresa_id, Empresa.all, :id, :nit, :prompt => "Selecione Empresa", :label => false,  :required => true %>
+             <%= f.collection_select :empresa_id, Empresa.all, :id, :nombre, :prompt => "Selecione Empresa", :label => false,  :required => true %>
             </div>
         </div>
   </div>
