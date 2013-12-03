@@ -8,6 +8,7 @@ class CreateEstudiantes < ActiveRecord::Migration
       t.boolean :genero
       t.string :email
       t.string :documento
+      t.references :tipopractica, index: true
       t.references :ficha, index: true
       t.references :jefe, index: true
       t.references :tipodoc, index: true

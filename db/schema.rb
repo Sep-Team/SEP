@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131121194325) do
+ActiveRecord::Schema.define(version: 20131203181516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 20131121194325) do
     t.integer  "categoria_id"
     t.integer  "objsyproy_id"
     t.integer  "estudiante_id"
-    t.integer  "actEstado_id"
+    t.integer  "actestado_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "actividades", ["actEstado_id"], name: "index_actividades_on_actEstado_id", using: :btree
+  add_index "actividades", ["actestado_id"], name: "index_actividades_on_actestado_id", using: :btree
   add_index "actividades", ["categoria_id"], name: "index_actividades_on_categoria_id", using: :btree
   add_index "actividades", ["estudiante_id"], name: "index_actividades_on_estudiante_id", using: :btree
   add_index "actividades", ["objsyproy_id"], name: "index_actividades_on_objsyproy_id", using: :btree
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 20131121194325) do
     t.boolean  "genero"
     t.string   "email"
     t.string   "documento"
+    t.integer  "tipopractica_id"
     t.integer  "ficha_id"
     t.integer  "jefe_id"
     t.integer  "tipodoc_id"
@@ -122,6 +123,7 @@ ActiveRecord::Schema.define(version: 20131121194325) do
   add_index "estudiantes", ["ficha_id"], name: "index_estudiantes_on_ficha_id", using: :btree
   add_index "estudiantes", ["jefe_id"], name: "index_estudiantes_on_jefe_id", using: :btree
   add_index "estudiantes", ["tipodoc_id"], name: "index_estudiantes_on_tipodoc_id", using: :btree
+  add_index "estudiantes", ["tipopractica_id"], name: "index_estudiantes_on_tipopractica_id", using: :btree
 
   create_table "evaluaciones", force: true do |t|
     t.integer  "estudiante_id"
@@ -140,14 +142,14 @@ ActiveRecord::Schema.define(version: 20131121194325) do
 
   create_table "factores", force: true do |t|
     t.integer  "area_id"
-    t.integer  "tipofactor_id"
+    t.integer  "tipo_factor_id"
     t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "factores", ["area_id"], name: "index_factores_on_area_id", using: :btree
-  add_index "factores", ["tipofactor_id"], name: "index_factores_on_tipofactor_id", using: :btree
+  add_index "factores", ["tipo_factor_id"], name: "index_factores_on_tipo_factor_id", using: :btree
 
   create_table "fichas", force: true do |t|
     t.string   "numero"
@@ -178,12 +180,12 @@ ActiveRecord::Schema.define(version: 20131121194325) do
     t.string   "descripcion"
     t.string   "implicados"
     t.integer  "user_id"
-    t.integer  "actEstado_id"
+    t.integer  "actestado_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "novedades", ["actEstado_id"], name: "index_novedades_on_actEstado_id", using: :btree
+  add_index "novedades", ["actestado_id"], name: "index_novedades_on_actestado_id", using: :btree
   add_index "novedades", ["user_id"], name: "index_novedades_on_user_id", using: :btree
 
   create_table "objsyproys", force: true do |t|
@@ -219,6 +221,13 @@ ActiveRecord::Schema.define(version: 20131121194325) do
   create_table "tipodocs", force: true do |t|
     t.string   "descripcion"
     t.string   "sigla"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipopracticas", force: true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

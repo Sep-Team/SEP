@@ -41,6 +41,6 @@ class EstudiantesController < ApplicationController
   end
 
   def estudiante_params
-    params.require(:estudiante).permit(:nombre1, :nombre2, :apellido1, :apellido2, :email, :genero, :documento, :ficha_id, :jefe_id, :tipodoc_id)
+    params.require(:estudiante).permit(:nombre1, :nombre2, :apellido1, :apellido2, :email, :genero, :documento, :tipopractica_id, :ficha_id, :jefe_id, :tipodoc_id)
   end
 end

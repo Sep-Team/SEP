@@ -13,7 +13,7 @@
         <td><%= @estudiante.nombre1 %></td>
       </tr>
       <tr>
-        <td><b class="pull-right">Segundo Nombre: </b></td>
+        <td><b class="pull-right">Nombre: </b></td>
         <td><%= @estudiante.nombre2 %></td>
       </tr>
        <tr>
@@ -28,10 +28,7 @@
         <td><b class="pull-right">Genero: </b></td>
         <td><%= @estudiante.genero %></td>
       </tr>
-      <tr>
-        <td><b class="pull-right">Email: </b></td>
-        <td><%= @estudiante.email %></td>
-      </tr>
+      
        <tr>
         <td><b class="pull-right">TipoDocumento: </b></td>
         <td><%= @estudiante.tipodoc.sigla %></td>
@@ -39,6 +36,10 @@
       <tr>
         <td><b class="pull-right">#Documento: </b></td>
         <td><%= @estudiante.documento %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">TipoPracticas: </b></td>
+        <td><%= @estudiante.tipopractica.nombre %></td>
       </tr>
        <tr>
         <td><b class="pull-right">Fichas: </b></td>

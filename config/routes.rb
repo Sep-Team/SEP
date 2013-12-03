@@ -1,4 +1,6 @@
 Sep::Application.routes.draw do
+  resources :tipopracticas
+
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"

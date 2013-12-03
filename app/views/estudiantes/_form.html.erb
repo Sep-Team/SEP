@@ -54,6 +54,12 @@
             <div class="col-md-6">
                <%= f.input :documento, :label => false,  :required => true %>
            </div>
+            <div class="col-md-4">
+              TipoPracticas:
+            </div>
+            <div class="col-md-6">
+               <%= f.collection_select :tipopractica_id, Tipopractica.all, :id, :nombre, :prompt => "Selecione Tipo Practicas", :label => false,  :required => true %></br></br>
+           </div>
              <div class="col-md-4">
               Ficha:
             </div>
