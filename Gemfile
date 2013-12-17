@@ -37,3 +37,6 @@ gem 'mime-types', :require => 'mime/types'
 gem 'remotipart'
 
 
+group :production do
+ gem "pg" 
+end

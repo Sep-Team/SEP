@@ -17,10 +17,3 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
-
-$('a[rel*=lazybox]').lazybox({close: false, modal: false, opacity: 0.7, klass: 'lazybox', speed: 200});
-  $.lazybox.settings = {cancelClass: "button green", submitClass: 'button red', closeImg: false, niceClose: false}
-  $.rails.allowAction = $.lazybox.confirm;
- 
-});
-$('#teams').tooltip('show')
