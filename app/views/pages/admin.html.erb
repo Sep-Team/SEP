@@ -1,0 +1,54 @@
+<div id="ad"  class="well">
+    <table id='tab' class="table table-hover">
+      <thead>
+        <tr>
+          <th>Administración # 1</th>
+          <th>Administración # 2</th>
+          <th>Administración # 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= link_to image_tag("Admin/user.png"), users_path, :rel => "tooltip", :title => "Usuarios" %>&nbsp&nbsp<%= link_to "usuarios", users_path %></td>
+          <td><%= link_to image_tag("Admin/estudiantes.png"), estudiantes_path, :rel => "tooltip", :title => "Estudiantes" %>&nbsp&nbsp<%= link_to "Estudiantes", estudiantes_path %></td>
+          <td><%= link_to image_tag("Admin/tipodocumentos.png"), tipodocs_path, :rel => "tooltip", :title => "Tipo Documento" %>&nbsp&nbsp<%= link_to "Tipo Documento", tipodocs_path %></td>
+        </tr>
+        <tr>
+          <td><%= link_to image_tag("Admin/jefes.png"), jefes_path, :rel => "tooltip", :title => "Jefes" %>&nbsp&nbsp<%= link_to "Jefes", jefes_path %></td>
+          <td><%= link_to image_tag("Admin/empresas.png"), empresas_path, :rel => "tooltip", :title => "Empresas" %>&nbsp&nbsp<%= link_to "Empresas", empresas_path %></td>
+           <td><%= link_to image_tag("Admin/asignar.png"), asignares_proy_path, :rel => "tooltip", :title => "AsigNaciónProyecto" %>&nbsp&nbsp<%= link_to "AsigNaciónProyecto", asignares_proy_path %></td>
+        </tr>
+        <tr>
+          <td><%= link_to image_tag("Admin/fichas.png"), fichas_path, :rel => "Fichas", :title => "Tipo Documentos" %>&nbsp&nbsp<%= link_to "Fichas", fichas_path %></td>
+          <td><%= link_to image_tag("Admin/programas.png"), programas_path, :rel => "tooltip", :title => "Programas" %>&nbsp&nbsp<%= link_to "Programas", programas_path %></td>
+           <td><%= link_to image_tag("Admin/centros.png"), centros_path, :rel => "tooltip", :title => "Centros" %>&nbsp&nbsp<%= link_to "Centros", centros_path %></td>
+        </tr>
+        <tr>
+          <td><%= link_to image_tag("Admin/areas.png"), areas_path, :rel => "tooltip", :title => "Areas" %>&nbsp&nbsp<%= link_to "Areas", areas_path %></td>
+           <td><%= link_to image_tag("Admin/categorias.png"), categorias_path, :rel => "tooltip", :title => "Categorias" %>&nbsp&nbsp<%= link_to "Categorias", categorias_path %></td>
+        <td><%= link_to image_tag("Admin/departamentos.png"), departamentos_path, :rel => "tooltip", :title => "Departamentos" %>&nbsp&nbsp<%= link_to "Departamentos", departamentos_path %></td>
+        </tr>
+
+        <tr>
+        <td><%= link_to image_tag("Admin/actividades.png"), actividades_path, :rel => "tooltip", :title => "actividades" %>&nbsp&nbsp<%= link_to "actividades", actividades_path %></td>
+        <td><%= link_to image_tag("Admin/evaluaciones.png"), evaluaciones_path, :rel => "tooltip", :title => "Evaluaciones" %>&nbsp&nbsp<%= link_to "Evaluaciones", evaluaciones_path %></td>
+        <td><%= link_to image_tag("Admin/detalles.png"), detalle_evaluaciones_path, :rel => "tooltip", :title => "DetallesEvaluaciones" %>&nbsp&nbsp<%= link_to "DetallesEvaluaciones", detalle_evaluaciones_path %></td>
+      </tr>
+      <tr>
+             <td><%= link_to image_tag("Admin/factores.png"), factores_path, :rel => "tooltip", :title => "Factores" %>&nbsp&nbsp<%= link_to "Factores", factores_path %></td>
+             <td><%= link_to image_tag("Admin/tipofactores.png"), tipo_factores_path, :rel => "tooltip", :title => "Tipos Factores" %>&nbsp&nbsp<%= link_to "Tipos Factores", tipo_factores_path %></td>
+              <td><%= link_to image_tag("Admin/objetivos.png"), objsyproys_path, :rel => "Fichas", :title => "ObjetivoProyecto" %>&nbsp&nbsp<%= link_to "ObjetivoProyecto",objsyproys_path %></td>
+         </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/titulaciones.png"), titulaciones_path, :rel => "tooltip", :title => "Titulaciones" %>&nbsp&nbsp<%= link_to "Titulaciones", titulaciones_path %></td>
+            <td><%= link_to image_tag("Admin/estadoactual.png"), actestados_path, :rel => "tooltip", :title => "EstadoActuales" %>&nbsp&nbsp<%= link_to "EstadoActuales", actestados_path %></td>
+             <td><%= link_to image_tag("Admin/novedades.png"), novedades_path, :rel => "tooltip", :title => "Novedades" %>&nbsp&nbsp<%= link_to "Novedades", novedades_path %></td>
+         </tr>
+          <tr>
+             <td><%= link_to image_tag("Admin/practicas.png"), tipopracticas_path, :rel => "tooltip", :title => "TipoPracticas" %>&nbsp&nbsp<%= link_to "TipoPracticas", tipopracticas_path %></td>
+             <td><%= link_to image_tag("Admin/Graficas.png"), tipopracticas_path, :rel => "tooltip", :title => "Grafiicas" %>&nbsp&nbsp<%= link_to "Graficas", tipopracticas_path %></td>
+              <td><%= link_to image_tag("Admin/sugerencias.png"), tipopracticas_path, :rel => "tooltip", :title => "Sugerencias" %>&nbsp&nbsp<%= link_to "Sugerencias", tipopracticas_path %></td>
+         </tr>
+      </tbody>
+    </table>
+</div>

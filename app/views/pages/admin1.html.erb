@@ -1,0 +1,62 @@
+<div id='admin' class="page-header">
+  <h3 >Administración #1 </h3>
+</div>
+<ul class="nav nav-pills">
+  <li class="active"><a href="admin">Admin #1 </a></li>
+  <li><a href="admin1">Admin #2</a></li>
+  <li><a href="#">Messages</a></li>
+</ul>
+<div id="fondadmin"  class="well">
+  <table id='tab' class="table table-hover">
+    <thead>
+      <tr>
+        <th>Maestra</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= link_to image_tag("Admin/actividades.png"), actividades_path, :rel => "tooltip", :title => "actividades" %>&nbsp&nbsp<%= link_to "actividades", actividades_path %></td>
+        <td> Administración de las Actividades</td>
+          <td></td>
+      </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/evaluaciones.png"), evaluaciones_path, :rel => "tooltip", :title => "Evaluaciones" %>&nbsp&nbsp<%= link_to "Evaluaciones", evaluaciones_path %></td>
+             <td> Administraciones de las Evaluaciones</td>
+             <td></td>
+         </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/factores.png"), factores_path, :rel => "tooltip", :title => "Factores" %>&nbsp&nbsp<%= link_to "Factores", factores_path %></td>
+             <td>Administraciones de los Factores</td>
+             <td></td>
+         </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/tipofactores.png"), tipo_factores_path, :rel => "tooltip", :title => "Tipos Factores" %>&nbsp&nbsp<%= link_to "Tipos Factores", tipo_factores_path %></td>
+             <td> Tipos de factores  administración</td>
+             <td></td>
+         </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/objetivos.png"), objsyproys_path, :rel => "Fichas", :title => "ObjetivoProyecto" %>&nbsp&nbsp<%= link_to "ObjetivoProyecto",objsyproys_path %></td>
+             <td>Objetivos de los proyecto con surespectivas Actividades</td>
+             <td></td>
+         </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/centros.png"), centros_path, :rel => "tooltip", :title => "Centros" %>&nbsp&nbsp<%= link_to "Centros", centros_path %></td>
+             <td>Centro de formación donde ejercio sus etapa lectiva.</td>
+             <td></td>
+         </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/titulaciones.png"), titulaciones_path, :rel => "tooltip", :title => "Titulaciones" %>&nbsp&nbsp<%= link_to "Titulaciones", titulaciones_path %></td>
+             <td>Titulaciones del area de programas ejercidos.</td>
+             <td></td>
+         </tr>
+         <tr>
+             <td><%= link_to image_tag("Admin/estadoactual.png"), actestados_path, :rel => "tooltip", :title => "EstadoActuales" %>&nbsp&nbsp<%= link_to "EstadoActuales", actestados_path %></td>
+             <td>Información de estados actuales en que se encuentra las actividades planeadas.</td>
+             <td></td>
+         </tr>
+      </tbody>
+
+    </table>
+        <td><%= link_to image_tag("AdelanteAdmin.png"), :rel => "tooltip", :title => "Avanzar Pagina Administración 2" %></td>
+</div>
