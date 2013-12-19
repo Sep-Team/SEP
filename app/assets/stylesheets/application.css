@@ -14,6 +14,26 @@
  */
 
 
+body{
+  width: 100%;
+  height: 710px;
+color: #080D0B;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #DDE0DE;
+  *background-color: #DDE0DE;
+  background-image: -moz-linear-gradient(top, #FCFFFD, #DDE0DE);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FCFFFD), to(#DDE0DE));
+  background-image: -webkit-linear-gradient(top, #FCFFFD, #DDE0DE);
+  background-image: -o-linear-gradient(top, #FCFFFD, #DDE0DE);
+  background-image: linear-gradient(to bottom, #FCFFFD, #DDE0DE);
+  background-repeat: repeat-x;
+  border-color: #DDE0DE;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FCFFFD', endColorstr='#DDE0DE', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+/*background: #D0D0D0url('Principal.jpg') repeat fixed top center;*/
+
+}
 
 #lazybox div.user{ 
   max-width: 700px; 
@@ -64,3 +84,54 @@ select{
   width: 25%;
   height: 30px;
 }
+
+input#buscar{
+  height: 30px;
+  width:70%;
+  margin-top: 15px;
+}
+
+button#buscar{
+  height: 30px;
+  width:15%;
+  margin-top: 15px;
+}
+li#buscar{
+  
+  margin-top: 15px;
+}
+div#example{
+  margin-top: -120px;
+}
+
+#pagination{
+  text-align: center;
+}
+
+#fond{
+  background: #fcf8e3;
+
+}
+
+#admin{
+  margin-top: -130px;
+}
+
+#fondadmin{
+  color: #444544;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #DBDBDB;
+  *background-color: #DBDBDB;
+  background-image: -moz-linear-gradient(top, #FFFFFF, #DBDBDB);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFFFFF), to(#DBDBDB));
+  background-image: -webkit-linear-gradient(top, #FFFFFF, #DBDBDB);
+  background-image: -o-linear-gradient(top, #FFFFFF, #DBDBDB);
+  background-image: linear-gradient(to bottom, #FFFFFF, #DBDBDB);
+  background-repeat: repeat-x;
+  border-color: #DBDBDB;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DBDBDB', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  
+}
+

@@ -12,6 +12,8 @@ Sep::Application.routes.draw do
   get "users/update"
   get "users/destroy"
   root 'pages#home'
+  get "pages/admin"
+  get "pages/admin1"
 
  get "logout" => "sessions#destroy", :as => "logout"
  get "login" => "sessions#new", :as => "login"
@@ -20,7 +22,10 @@ Sep::Application.routes.draw do
  resources :sessions
 
   get "pages/home"
-  get "home"        => "pages#home", :as => "home"
+  get "home"  => "pages#home", :as => "home"
+  get "admin"  => "pages#admin", :as => "admin"
+  get "admin1"  => "pages#admin1", :as => "admin1"
+
 
   match '/about',   to: 'pages#about',   via: 'get'
 

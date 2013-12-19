@@ -4,7 +4,10 @@ class EstudiantesController < ApplicationController
   before_filter :require_login
   
   def index
-    @estudiantes = Estudiante.all
+    if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 4
+    end
+    @estudiantes = Estudiante.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show

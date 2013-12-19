@@ -26,7 +26,6 @@ gem "less-rails"
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-will_paginate'
-gem 'will_paginate'
 gem 'thin'
 gem 'json'
 gem 'lazybox', '0.2.3'

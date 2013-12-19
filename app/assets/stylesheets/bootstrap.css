@@ -1,4 +1,4 @@
-/*!
+page-header/*!
  * Bootstrap v3.0.0
  *
  * Copyright 2013 Twitter, Inc
@@ -2096,9 +2096,20 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  color: #30302F;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #EAF2F0;
+  *background-color: #EAF2F0;
+  background-image: -moz-linear-gradient(top, #494D49, #EAF2F0);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#494D49), to(#EAF2F0));
+  background-image: -webkit-linear-gradient(top, #494D49, #EAF2F0);
+  background-image: -o-linear-gradient(top, #494D49, #EAF2F0);
+  background-image: linear-gradient(to bottom, #494D49, #EAF2F0);
+  background-repeat: repeat-x;
+  border-color: #EAF2F0;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#494D49', endColorstr='#EAF2F0', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .btn-primary:hover,
@@ -2106,9 +2117,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-  color: #ffffff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  color: #7F8281;
+  background-color: #EAF2F0;
+  *background-color: #003bb3;
 }
 
 .btn-primary:active,
@@ -3866,7 +3877,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddddd;
 }
 
 .nav-tabs > li {
@@ -3882,7 +3893,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .nav-tabs > li > a:hover {
-  border-color: #eeeeee #eeeeee #dddddd;
+  border-color: #eeeeee #eeeeee #000;
 }
 
 .nav-tabs > li.active > a,
@@ -3894,6 +3905,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
 }
+
 
 .nav-tabs.nav-justified {
   width: 100%;
@@ -4509,8 +4521,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+  background-color: #0d0e0e;
+  border-color: #000000;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#262828), to(#0d0e0e));
+  background-image: -webkit-linear-gradient(top, #262828, 0%, #0d0e0e, 100%);
+  background-image: -moz-linear-gradient(top, #262828 0%, #0d0e0e 100%);
+  background-image: linear-gradient(to bottom, #262828 0%, #0d0e0e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff262828', endColorstr='#ff0d0e0e', GradientType=0);
 }
 
 .navbar-inverse .navbar-brand {
@@ -4519,7 +4537,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #ffffff;
+  color: #939d97;
   background-color: transparent;
 }
 
@@ -4533,15 +4551,21 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: #e0e9e6;
   background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #ffffff;
-  background-color: #080808;
+  color: #e0e9e6;
+  background-color: #323838;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#323838), to(#4a5252));
+  background-image: -webkit-linear-gradient(top, #323838, 0%, #4a5252, 100%);
+  background-image: -moz-linear-gradient(top, #323838 0%, #4a5252 100%);
+  background-image: linear-gradient(to bottom, #323838 0%, #4a5252 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff323838', endColorstr='#ff4a5252', GradientType=0);
 }
 
 .navbar-inverse .navbar-nav > .disabled > a,
@@ -4557,11 +4581,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
+ background-color: #dddddd;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: #000;
 }
 
 .navbar-inverse .navbar-collapse,
@@ -4595,32 +4619,32 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #080808;
+    border-color: #b2bbbb;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #999999;
+    color: #084b1d;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffffff;
+    color: #084b1d;
     background-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ffffff;
-    background-color: #080808;
+    background-color: #b2bbbb;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #444444;
+    color: #084b1d;
     background-color: transparent;
   }
 }
 
 .navbar-inverse .navbar-link {
-  color: #999999;
+  color: #084b1d;
 }
 
 .navbar-inverse .navbar-link:hover {

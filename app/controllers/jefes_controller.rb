@@ -4,7 +4,11 @@ class JefesController < ApplicationController
   before_filter :require_login
 
   def index
-    @jefes = Jefe.all
+
+     if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 5
+    end
+     @jefes = Jefe.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show
