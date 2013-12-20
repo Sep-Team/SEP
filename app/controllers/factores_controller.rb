@@ -2,9 +2,11 @@ class FactoresController < ApplicationController
 
   before_action :set_factor, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
+  before_filter :find_tipo_factor_factores
   
   def index
-    @factores = Factor.all
+    @factores = @tipo_factor.factores.all
+     
   end
 
   def show
@@ -20,7 +22,7 @@ class FactoresController < ApplicationController
   end
 
   def create
-    @factor = Factor.new(factor_params)
+    @factor = @tipo_factor.factores.build(factor_params)
     render :action => :new unless @factor.save
   end
 
@@ -35,12 +37,19 @@ class FactoresController < ApplicationController
   end
 
   private
+  
+  def find_tipo_factor_factores
+     @tipo_factor = TipoFactor.find(params[:tipo_factor_id])
+     @factor = Factor.find(params[:id]) if params[:id]
+  end 
+
+  private
    
   def set_factor
     @factor = Factor.find(params[:id])
   end
 
   def factor_params
-    params.require(:factor).permit(:area_id, :tipo_factor_id, :descripcion)
+    params.require(:factor).permit(:area_id, :tipo_factor_id, :descripcion, :nombre)
   end
 end

@@ -2,6 +2,7 @@ class TipoFactoresController < ApplicationController
 
   before_action :set_tipo_factor, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
+  before_filter :find_factor, :except => [ :index, :create, :new ]
 
   def index
     @tipo_factores = TipoFactor.all
@@ -33,6 +34,13 @@ class TipoFactoresController < ApplicationController
     @tipo_factor = TipoFactor.find(params[:id])
     @tipo_factor.destroy
   end
+
+    
+  private
+
+  def find_factor
+      @tipo_factor = TipoFactor.find(params[:id]) if params[:id]
+  end 
 
   private
 

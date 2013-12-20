@@ -3,6 +3,7 @@ class CreateFactores < ActiveRecord::Migration
     create_table :factores do |t|
       t.references :area, index: true
       t.references :tipo_factor, index: true
+      t.string :nombre
       t.string :descripcion
 
       t.timestamps
