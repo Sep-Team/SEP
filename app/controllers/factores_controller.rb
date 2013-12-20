@@ -5,8 +5,13 @@ class FactoresController < ApplicationController
   before_filter :find_tipo_factor_factores
   
   def index
-    @factores = @tipo_factor.factores.all
-     
+
+     if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 4
+    end
+    @factores = @tipo_factor.factores.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+  
+    
   end
 
   def show
