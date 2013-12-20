@@ -34,6 +34,7 @@ gem 'mime-types', :require => 'mime/types'
 gem 'rails3-jquery-autocomplete'
 gem 'mime-types', :require => 'mime/types'
 gem 'remotipart'
+ gem 'bootstrap-datepicker-rails'
 
 
 group :production do
