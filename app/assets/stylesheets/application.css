@@ -135,6 +135,7 @@ div#example{
   
 }
 
-#ad{
-  margin-top: -115px;
+.add-on{
+  margin-top: -22px;
+  left: 300px;
 }

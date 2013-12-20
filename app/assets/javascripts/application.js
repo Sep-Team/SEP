@@ -16,4 +16,6 @@
 //= require lazybox
 //= require twitter/bootstrap
 //= require turbolinks
+//= require bootstrap-datepicker
 //= require_tree .
+

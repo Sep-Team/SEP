@@ -5,7 +5,9 @@ class TipoFactoresController < ApplicationController
   before_filter :find_factor, :except => [ :index, :create, :new ]
 
   def index
-    @tipo_factores = TipoFactor.all
+    if params[:registro] == nil or params[:registro] <= '0' then params[:registro] = 4
+    end
+    @tipo_factores = TipoFactor.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show
