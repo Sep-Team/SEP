@@ -1,9 +1,14 @@
 class ActividadesController < ApplicationController
   before_action :set_actividad, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
+  before_filter :find_actividad_asignares_proy
   
   def index
-    @actividades = Actividad.all
+
+    if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 4
+    end
+    @actividades = @asignar_proy.actividades.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show
@@ -19,9 +24,8 @@ class ActividadesController < ApplicationController
   end
 
   def create
-    @actividad = Actividad.new(actividad_params)
-    render :action => :new unless @actividad.save
-   
+    @actividad = @asignar_proy.actividades.build(actividad_params)
+    render :action => :new unless @actividad.save 
   end
 
   def update
@@ -33,7 +37,12 @@ class ActividadesController < ApplicationController
    @actividad = Actividad.find(params[:id])
    @actividad.destroy
   end
-
+   private
+  
+  def find_actividad_asignares_proy
+     @asignar_proy = AsignarProy.find(params[:asignar_proy_id])
+     @actividad = Actividad.find(params[:id]) if params[:id]
+  end 
   private
   
   def set_actividad
@@ -41,6 +50,6 @@ class ActividadesController < ApplicationController
   end
 
   def actividad_params
-    params.require(:actividad).permit(:fecha_inicio, :fecha_fin, :descripcion, :categoria_id, :objsyproy_id, :estudiante_id, :actestado_id)
+    params.require(:actividad).permit(:nombre, :fecha_inicio, :fecha_fin, :descripcion, :objetivo, :categoria_id, :objsyproy_id, :asignar_proy_id, :actestado_id)
   end
 end

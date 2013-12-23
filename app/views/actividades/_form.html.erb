@@ -1,4 +1,5 @@
-<%= simple_form_for(@actividad, :html => { :multipart => true, :remote => true }) do |f| %>
+<%= javascript_include_tag "fecha" %>
+<%= simple_form_for([@asignar_proy, @actividad], :html => { :multipart => true, :remote => true }) do |f| %>
 <div class="user">
     <div class="modal-header">
        <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
@@ -9,19 +10,13 @@
              FechaInicio:
             </div>
             <div class="col-md-8">
-              <%= f.input :fecha_inicio, :label => false,  :required => true %>
+               <%= f.input :fecha_inicio, :as => :string, :label => false, :required => true,  :input_html => {  :class => "datepicker " } %>
             </div>
             <div class="col-md-4">
-              Estudiantes:
+              NombreAct:
             </div>
             <div class="col-md-8">
-              <%= f.collection_select :estudiante_id, Estudiante.all, :id, :nombre1, :prompt => "Selecione Estudiante"  %> <br><br>
-            </div>
-            <div class="col-md-4">
-              Objetivos:
-            </div>
-            <div class="col-md-8">
-              <%= f.collection_select :objsyproy_id, Objsyproy.all, :id, :nombre, :prompt => "Selecione Objetivo Proyecto" %> <br><br> 
+              <%= f.input :nombre, :label => false,  :required => true  %>
             </div>
              <div class="col-md-4">
               Categorias:
@@ -42,10 +37,16 @@
               <%= f.input :descripcion, :label => false,  :required => true  %>
             </div>
              <div class="col-md-4">
+              Objetivo:
+            </div>
+            <div class="col-md-8">
+              <%= f.input :objetivo, :label => false,  :required => true  %>
+            </div>
+             <div class="col-md-4">
               FechaFin:
             </div>
             <div class="col-md-8">
-             <%= f.input :fecha_fin, :label => false,  :required => true  %>
+             <%= f.input :fecha_fin, :as => :string, :label => false,  :required => true,  :input_html => {  :class => "datepicker" } %>
             </div>
         </div>
   </div>

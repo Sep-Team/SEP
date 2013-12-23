@@ -1,22 +1,22 @@
-<%= simple_form_for(@asignar_proy, :html => { :multipart => true, :remote => true }) do |f| %>
+<%= simple_form_for([@estudiante, @asignar_proy], :html => { :multipart => true, :remote => true }) do |f| %>
  <div class="user">
     <div class="modal-header">
        <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
       <h4 class="modal-title"><h3>Datos Asignación P</h3></h4>
         </div><br>
           <div class="row">
-            <div class="col-md-4">
-             Estudiantes:
+           <div class="col-md-4">
+             Nombre:
             </div>
             <div class="col-md-6">
-              <%= f.collection_select :estudiante_id, Estudiante.all, :id, :nombre1, :prompt => "Selecione Estudiante", :label => false,  :required => true  %></br></br>
+              <%= f.input :nombre, :label => false,  :required => true %>
             </div>
-            <div class="col-md-4">
-              ObjetivoP:
-            </div>
+         <div class="col-md-4">
+             Objetivo:
+          </div>
             <div class="col-md-6">
-                <%= f.collection_select :objsyproy_id, Objsyproy.all, :id, :nombre, :prompt => "ObjetivoProyectos", :label => false,  :required => true  %>
-        </div>
+              <%= f.input :objetivo, :label => false,  :required => true %>
+            </div>
   </div>
   <div class="modal-footer">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
