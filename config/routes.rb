@@ -60,10 +60,6 @@ Sep::Application.routes.draw do
 
   resources :programas
 
-  resources :objsyproys
-
-  resources :departamentos
-
   resources :categorias
 
   resources :jefes
