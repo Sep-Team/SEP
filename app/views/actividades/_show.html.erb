@@ -12,13 +12,9 @@
         <td><b class="pull-right">FechaInicio: </b></td>
         <td><%= @actividad.fecha_inicio %></td>
       </tr>
-      <tr>
-        <td><b class="pull-right">Estudiantes: </b></td>
-        <td><%= @actividad.estudiante.nombre1 %></td>
-      </tr>
-      <tr>
-        <td><b class="pull-right">ObjetivoP: </b></td>
-        <td><%= @actividad.objsyproy.nombre %></td>
+       <tr>
+        <td><b class="pull-right">NombreActividad: </b></td>
+        <td><%= @actividad.nombre %></td>
       </tr>
       <tr>
         <td><b class="pull-right">ActualEstado: </b></td>
@@ -27,6 +23,10 @@
         <tr>
         <td><b class="pull-right">Descripción: </b></td>
         <td><%= @actividad.descripcion %></td>
+      </tr>
+      <tr>
+        <td><b class="pull-right">Objetivo: </b></td>
+        <td><%= @actividad.objetivo %></td>
       </tr>
         <tr>
         <td><b class="pull-right">FechaFin: </b></td>

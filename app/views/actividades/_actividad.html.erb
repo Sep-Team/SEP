@@ -1,17 +1,15 @@
 <tr id=<%= "actividad_#{actividad.id}" %>>
 	<td><%= actividad.id %></td>
 	<td><%= actividad.fecha_inicio %></td>
-	<td><%= actividad.estudiante.nombre1 %></td>
-	<td><%= actividad.objsyproy.nombre %></td>
+	<td><%= actividad.nombre %></td>
 	<td><%= actividad.categoria.nombre %></td>
 	<td><%= actividad.actestado.nombre %></td>
+	<td><%= actividad.objetivo %></td>
 	<td><%= actividad.fecha_fin %></td>
 
 	<td> 
-		<%= link_to  image_tag('Crud/mostrar.png'), actividad, :remote => true, :class => 'btn btn-mini' %>
-        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_actividad_path(actividad), :remote => true,
+		<%= link_to  image_tag('Crud/mostrar.png'), asignar_proy_actividad_path(@asignar_proy, actividad), :remote => true, :class => 'btn btn-mini' %>
+        <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_asignar_proy_actividad_path(@asignar_proy, actividad), :remote => true,
           :class => 'btn btn-mini'%>
 	</td>
 </tr>
-
-

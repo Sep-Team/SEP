@@ -29,6 +29,19 @@ Sep::Application.routes.draw do
  resources :tipo_factores do
     resources :factores
   end
+
+
+
+  resources :estudiantes do
+    resources :asignares_proy
+  end
+  resources :asignares_proy do 
+    resources :actividades  
+  end
+
+
+ 
+
   match '/about',   to: 'pages#about',   via: 'get'
 
   resources :novedades
@@ -41,12 +54,8 @@ Sep::Application.routes.draw do
 
   resources :areas
 
-  resources :asignares_proy
 
-  resources :actividades
-
-  resources :estudiantes
-
+ resources :actividades
   resources :fichas
 
   resources :programas

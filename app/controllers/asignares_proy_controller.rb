@@ -2,9 +2,14 @@ class AsignaresProyController < ApplicationController
   
   before_action :set_asignar_proy,:require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
+  before_filter :find_asignar_proy_estudiantes
+  before_filter :find_actividad, :except => [ :index, :create, :new ]
   
   def index
-    @asignares_proy = AsignarProy.all
+     if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 4
+    end
+    @asignares_proy = @estudiante.asignares_proy.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show
@@ -20,7 +25,7 @@ class AsignaresProyController < ApplicationController
   end
 
   def create
-    @asignar_proy = AsignarProy.new(asignar_proy_params)
+    @asignar_proy = @estudiante.asignares_proy.build(asignar_proy_params)
     render :action => :new unless @asignar_proy.save
   end
 
@@ -36,11 +41,25 @@ class AsignaresProyController < ApplicationController
 
   private
 
+  def find_actividad
+      @asignar_proy = AsignarProy.find(params[:id]) if params[:id]
+  end 
+
+
+  private
+  
+  def find_asignar_proy_estudiantes
+     @estudiante = Estudiante.find(params[:estudiante_id])
+     @asignar_proy = AsignarProy.find(params[:id]) if params[:id]
+  end 
+
+  private
+
   def set_asignar_proy
     @asignar_proy = AsignarProy.find(params[:id])
   end
 
   def asignar_proy_params
-    params.require(:asignar_proy).permit(:estudiante_id, :objsyproy_id)
+    params.require(:asignar_proy).permit(:nombre, :objetivo, :estudiante_id, :objsyproy_id, :estudiante_id)
   end
 end

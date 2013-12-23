@@ -1,6 +1,8 @@
 class CreateAsignaresProy < ActiveRecord::Migration
   def change
     create_table :asignares_proy do |t|
+      t.string :nombre
+      t.string :objetivo
       t.references :estudiante, index: true
       t.references :objsyproy, index: true
 
