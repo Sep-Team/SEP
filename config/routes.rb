@@ -30,8 +30,6 @@ Sep::Application.routes.draw do
     resources :factores
   end
 
-
-
   resources :estudiantes do
     resources :asignares_proy
   end

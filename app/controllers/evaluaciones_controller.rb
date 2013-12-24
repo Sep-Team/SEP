@@ -42,6 +42,10 @@ class EvaluacionesController < ApplicationController
   end
 
   def evaluacion_params
-    params.require(:evaluacion).permit(:estudiante_id, :jefe_id, :fecha_inicio, :fecha_fin, :fecha_evaluacion, :aspectos_positivos, :aspectos_negativos)
+    params.require(:evaluacion).permit(:estudiante_id, :jefe_id, :fecha_inicio, :fecha_fin, :fecha_evaluacion, :aspectos_positivos, :aspectos_negativos,
+      :aspectospositivofactortecnico, :aspectosnegativofactortecnico, :relacionesinterpersona,
+      :trabajoequipo, :solucionproblema, :cumplimiento, :organizacion, :transferenciaconocimiento,
+      :mejoracontinua, :fortalecimientoocupacional, :oportunidadcalidad, :responsabilidadambiental,
+      :administracionrecurso, :seguridadocupacionalindustrial, :documentacionetapaproductiva)
   end
 end

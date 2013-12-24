@@ -39,6 +39,9 @@ color: #080D0B;
   max-width: 700px; 
 
 }
+#lazybox div.examen{ 
+  max-width: 900px;
+}
 
 .lazybox {
   background: transparent !important;
