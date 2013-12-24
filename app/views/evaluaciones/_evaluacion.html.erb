@@ -1,6 +1,5 @@
 <tr id=<%= "evaluacion_#{evaluacion.id}" %>>
 	<td><%= evaluacion.id %></td>
-	<td><%= evaluacion.estudiante.nombre1 %></td>
 	<td><%= evaluacion.jefe.nombres %></td>
 	<td><%= evaluacion.fecha_inicio %></td>
 	<td><%= evaluacion.fecha_evaluacion %></td>
@@ -11,6 +10,8 @@
 		<%= link_to  image_tag('Crud/mostrar.png'), evaluacion, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_evaluacion_path(evaluacion), :remote => true,
           :class => 'btn btn-mini'%>
+
+           
 	</td>
 </tr>
 
