@@ -27,18 +27,18 @@ ActiveRecord::Schema.define(version: 20131203181516) do
     t.date     "fecha_inicio"
     t.date     "fecha_fin"
     t.string   "descripcion"
+    t.string   "objetivo"
+    t.string   "nombre"
     t.integer  "categoria_id"
-    t.integer  "objsyproy_id"
-    t.integer  "estudiante_id"
     t.integer  "actestado_id"
+    t.integer  "asignar_proy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "actividades", ["actestado_id"], name: "index_actividades_on_actestado_id", using: :btree
+  add_index "actividades", ["asignar_proy_id"], name: "index_actividades_on_asignar_proy_id", using: :btree
   add_index "actividades", ["categoria_id"], name: "index_actividades_on_categoria_id", using: :btree
-  add_index "actividades", ["estudiante_id"], name: "index_actividades_on_estudiante_id", using: :btree
-  add_index "actividades", ["objsyproy_id"], name: "index_actividades_on_objsyproy_id", using: :btree
 
   create_table "areas", force: true do |t|
     t.string   "nombre"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20131203181516) do
   end
 
   create_table "asignares_proy", force: true do |t|
+    t.string   "nombre"
+    t.string   "objetivo"
     t.integer  "estudiante_id"
     t.integer  "objsyproy_id"
     t.datetime "created_at"
@@ -68,13 +70,6 @@ ActiveRecord::Schema.define(version: 20131203181516) do
     t.string   "codigo"
     t.string   "nombre"
     t.string   "direccion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "departamentos", force: true do |t|
-    t.string   "nombre"
-    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -128,11 +123,26 @@ ActiveRecord::Schema.define(version: 20131203181516) do
   create_table "evaluaciones", force: true do |t|
     t.integer  "estudiante_id"
     t.integer  "jefe_id"
+    t.boolean  "relacionesinterpersona"
+    t.boolean  "trabajoequipo"
+    t.boolean  "solucionproblema"
+    t.boolean  "cumplimiento"
+    t.boolean  "organizacion"
+    t.boolean  "transferenciaconocimiento"
+    t.boolean  "mejoracontinua"
+    t.boolean  "fortalecimientoocupacional"
+    t.boolean  "oportunidadcalidad"
+    t.boolean  "responsabilidadambiental"
+    t.boolean  "administracionrecurso"
+    t.boolean  "seguridadocupacionalindustrial"
+    t.boolean  "documentacionetapaproductiva"
     t.date     "fecha_inicio"
     t.date     "fecha_fin"
     t.date     "fecha_evaluacion"
     t.string   "aspectos_positivos"
     t.string   "aspectos_negativos"
+    t.string   "aspectospositivofactortecnico"
+    t.string   "aspectosnegativofactortecnico"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -143,6 +153,7 @@ ActiveRecord::Schema.define(version: 20131203181516) do
   create_table "factores", force: true do |t|
     t.integer  "area_id"
     t.integer  "tipo_factor_id"
+    t.string   "nombre"
     t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -187,16 +198,6 @@ ActiveRecord::Schema.define(version: 20131203181516) do
 
   add_index "novedades", ["actestado_id"], name: "index_novedades_on_actestado_id", using: :btree
   add_index "novedades", ["user_id"], name: "index_novedades_on_user_id", using: :btree
-
-  create_table "objsyproys", force: true do |t|
-    t.string   "nombre"
-    t.string   "descripcion"
-    t.integer  "departamento_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "objsyproys", ["departamento_id"], name: "index_objsyproys_on_departamento_id", using: :btree
 
   create_table "programas", force: true do |t|
     t.string   "nombre"

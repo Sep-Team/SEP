@@ -3,7 +3,10 @@ class CategoriasController < ApplicationController
   before_filter :require_login
 
   def index
-    @categorias = Categoria.all
+    if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 4
+    end
+    @categorias = Categoria.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show
