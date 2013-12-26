@@ -1,10 +1,13 @@
 class EvaluacionesController < ApplicationController
-  
   before_action :set_evaluacion, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
+  before_filter :find_estudiante_evaluaciones
   
   def index
-    @evaluaciones = Evaluacion.all
+    if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 3
+    end
+    @evaluaciones = @estudiante.evaluaciones.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show
@@ -20,20 +23,26 @@ class EvaluacionesController < ApplicationController
   end
 
   def create
-    @evaluacion = Evaluacion.new(evaluacion_params)
+    @evaluacion = @estudiante.evaluaciones.build(evaluacion_params)
     render :action => :new unless @evaluacion.save
   end
 
   def update
     @evaluacion = Evaluacion.find(params[:id])
     render :action => :edit unless @evaluacion.update_attributes(evaluacion_params)
-   
   end
 
   def destroy
    @evaluacion = Evaluacion.find(params[:id])
    @evaluacion.destroy
   end
+
+  private
+  
+  def find_estudiante_evaluaciones
+     @estudiante = Estudiante.find(params[:estudiante_id])
+     @evaluacion = Evaluacion.find(params[:id]) if params[:id]
+  end 
 
   private
     

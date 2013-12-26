@@ -1,4 +1,3 @@
-
 <div id="example" class="page-header">
     <h3>Empresas</h3>
     <div class="navbar">
@@ -15,31 +14,31 @@
     </div>
   </div>
   </div>
-    <table class="table table-hover"  >
-        <thead>
-            <tr>
-              <th >id</th>
-              <th >Nombres</th>
-              <th >Nit</th>
-              <th >Dv</th>  
-              <th >Direccion</th> 
-              <th >Telefono</th>
-              <th >Fax</th>
-              <th >Email</th>  
-              <th >PaginaWeb</th>     
-          </tr>
-        </thead>
-        <tbody><%= render @empresas %></tbody>
-        <tfoot>
-           <tr>
-              <td>
-                <%= link_to image_tag('Crud/save.png'),  new_empresa_path,  :remote => true %>
-              </td>
-            </tr>
-        </tfoot>
-    </table>
-     <div id="pagination">
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Nombres</th>
+        <th >Nit</th>
+        <th >Dv</th>  
+        <th >Direccion</th> 
+        <th >Telefono</th>
+        <th >Fax</th>
+        <th >Email</th>  
+        <th >PaginaWeb</th>     
+      </tr>
+    </thead>
+    <tbody><%= render @empresas %></tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_empresa_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+    <div id="pagination">
       <ul class="pagination">
         <%= will_paginate @empresas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
       </ul>
-  </div>
+    </div>

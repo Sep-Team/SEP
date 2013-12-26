@@ -3,21 +3,21 @@
     <div class="modal-header">
        <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
       <h4 class="modal-title"><h3>Datos Titulaciones</h3></h4>
-        </div><br>
-          <div class="row">
-            <div class="col-md-4">
-             Siglas:
-            </div>
-            <div class="col-md-6">
-              <%= f.input :sigla, :label => false,  :required => true %>
-            </div>
-            <div class="col-md-4">
-              Descripción:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :descripcion, :label => false,  :required => true  %>
-            </div>
+    </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          Siglas:
         </div>
+        <div class="col-md-6">
+          <%= f.input :sigla, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          Descripción:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :descripcion, :label => false,  :required => true  %>
+        </div>
+      </div>
   </div>
   <div class="modal-footer">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>

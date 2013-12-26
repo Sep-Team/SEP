@@ -36,6 +36,10 @@ Sep::Application.routes.draw do
   resources :asignares_proy do 
     resources :actividades  
   end
+    resources :estudiantes do
+    resources :evaluaciones
+  end
+
 
 
  
@@ -48,7 +52,7 @@ Sep::Application.routes.draw do
 
   resources :detalle_evaluaciones
 
-  resources :evaluaciones
+  
 
   resources :areas
 

@@ -1,5 +1,4 @@
 class FichasController < ApplicationController
-
   before_action :set_ficha, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
 

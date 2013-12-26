@@ -1,5 +1,4 @@
 class ProgramasController < ApplicationController
-
   before_action :set_programa,  :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
   

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :require_login, [:show, :edit, :update, :destroy]
   before_filter :require_login, :except => [ :create, :new ]
   

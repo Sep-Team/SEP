@@ -3,34 +3,33 @@
     <div class="modal-header">
        <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
       <h4 class="modal-title"><h3>Datos Usuarios</h3></h4>
-        </div><br>
-
-              <div class="row">
-             <div class="col-md-4">
-              Email:
-            </div>
-             <div class="col-md-6">
-              <%= f.input :email, :label => false,  :required => true %>
-            </div>
-            <div class="col-md-4">
-              Mi Usuario:
-            </div>
-            <div class="col-md-6">
-              <%=  f.input :username, :label => false,  :required => true %>
-            </div>
-            <div class="col-md-4">
-              Contraseña:
-            </div>
-            <div class="col-md-6">
-              <%= f.input :password, :label => false,  :required => true %>
-            </div>
-            <div class="col-md-4">
-              Confirmar Contraseña:
-            </div>
-            <div class="col-md-6">
-              <%= f.input :password_confirmation, :label => false,  :required => true %>
-            </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-4">
+        Email:
       </div>
+      <div class="col-md-6">
+        <%= f.input :email, :label => false,  :required => true %>
+      </div>
+      <div class="col-md-4">
+        Mi Usuario:
+      </div>
+      <div class="col-md-6">
+        <%=  f.input :username, :label => false,  :required => true %>
+      </div>
+      <div class="col-md-4">
+        Contraseña:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :password, :label => false,  :required => true %>
+      </div>
+      <div class="col-md-4">
+        Confirmar Contraseña:
+      </div>
+      <div class="col-md-6">
+        <%= f.input :password_confirmation, :label => false,  :required => true %>
+      </div>
+    </div>
   </div>
   <div class="modal-footer">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>

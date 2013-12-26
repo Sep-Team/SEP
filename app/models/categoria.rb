@@ -1,4 +1,3 @@
 class Categoria < ActiveRecord::Base
-
-	has_many :actividades
+  has_many :actividades
 end

@@ -1,5 +1,4 @@
 class TitulacionesController < ApplicationController
-
   before_action :set_titulacion, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
   

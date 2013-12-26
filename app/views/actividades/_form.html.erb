@@ -1,56 +1,55 @@
 <%= javascript_include_tag "fecha" %>
 <%= simple_form_for([@asignar_proy, @actividad], :html => { :multipart => true, :remote => true }) do |f| %>
-<div class="user">
+  <div class="user">
     <div class="modal-header">
-       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
       <h4 class="modal-title"><h3>Datos Actvidades</h3></h4>
-        </div><br>
-          <div class="row">
-            <div class="col-md-4">
-             FechaInicio:
-            </div>
-            <div class="col-md-8">
-               <%= f.input :fecha_inicio, :as => :string, :label => false, :required => true,  :input_html => {  :class => "datepicker " } %>
-            </div>
-            <div class="col-md-4">
-              NombreAct:
-            </div>
-            <div class="col-md-8">
-              <%= f.input :nombre, :label => false,  :required => true  %>
-            </div>
-             <div class="col-md-4">
-              Categorias:
-            </div>
-            <div class="col-md-8">
-             <%= f.collection_select :categoria_id, Categoria.all, :id, :nombre, :prompt => "Selecione Categoria" %><br><br>
-            </div>
-             <div class="col-md-4">
-              EstEstado:
-            </div>
-            <div class="col-md-8">
-             <%= f.collection_select :actestado_id , Actestado.all, :id, :nombre, :prompt => "Selecione ActEstado" %> <br><br> 
-            </div>
-            <div class="col-md-4">
-              Descripción:
-            </div>
-            <div class="col-md-8">
-              <%= f.input :descripcion, :label => false,  :required => true  %>
-            </div>
-             <div class="col-md-4">
-              Objetivo:
-            </div>
-            <div class="col-md-8">
-              <%= f.input :objetivo, :label => false,  :required => true  %>
-            </div>
-             <div class="col-md-4">
-              FechaFin:
-            </div>
-            <div class="col-md-8">
-             <%= f.input :fecha_fin, :as => :string, :label => false,  :required => true,  :input_html => {  :class => "datepicker" } %>
-            </div>
-        </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-4">
+        FechaInicio:
+      </div>
+      <div class="col-md-8">
+        <%= f.input :fecha_inicio, :as => :string, :label => false, :required => true,  :input_html => {  :class => "datepicker " } %>
+      </div>
+      <div class="col-md-4">
+        NombreAct:
+      </div>
+      <div class="col-md-8">
+        <%= f.input :nombre, :label => false,  :required => true  %>
+      </div>
+      <div class="col-md-4">
+        Categorias:
+      </div>
+      <div class="col-md-8">
+        <%= f.collection_select :categoria_id, Categoria.all, :id, :nombre, :prompt => "Selecione Categoria" %><br><br>
+      </div>
+      <div class="col-md-4">
+        EstEstado:
+      </div>
+      <div class="col-md-8">
+        <%= f.collection_select :actestado_id , Actestado.all, :id, :nombre, :prompt => "Selecione ActEstado" %> <br><br> 
+      </div>
+      <div class="col-md-4">
+        Descripción:
+      </div>
+      <div class="col-md-8">
+        <%= f.input :descripcion, :label => false,  :required => true  %>
+      </div>
+      <div class="col-md-4">
+        Objetivo:
+      </div>
+      <div class="col-md-8">
+        <%= f.input :objetivo, :label => false,  :required => true  %>
+      </div>
+      <div class="col-md-4">
+        FechaFin:
+      </div>
+      <div class="col-md-8">
+        <%= f.input :fecha_fin, :as => :string, :label => false,  :required => true,  :input_html => {  :class => "datepicker" } %>
+      </div>
+    </div>
   </div>
- 
   <div class="modal-footer">
     <%= f.submit "guardar", :class => 'btn btn-primary' %>
     <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>

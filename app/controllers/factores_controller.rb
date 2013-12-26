@@ -1,17 +1,13 @@
 class FactoresController < ApplicationController
-
   before_action :set_factor, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
   before_filter :find_tipo_factor_factores
   
   def index
-
-     if params[:registro] == nil or params[:registro] <= '0' then
+    if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 4
     end
-    @factores = @tipo_factor.factores.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
-  
-    
+    @factores = @tipo_factor.factores.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)  
   end
 
   def show
@@ -44,8 +40,8 @@ class FactoresController < ApplicationController
   private
   
   def find_tipo_factor_factores
-     @tipo_factor = TipoFactor.find(params[:tipo_factor_id])
-     @factor = Factor.find(params[:id]) if params[:id]
+    @tipo_factor = TipoFactor.find(params[:tipo_factor_id])
+    @factor = Factor.find(params[:id]) if params[:id]
   end 
 
   private
