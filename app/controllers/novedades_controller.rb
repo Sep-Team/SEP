@@ -1,5 +1,4 @@
 class NovedadesController < ApplicationController
-
   before_action :set_novedad, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
   

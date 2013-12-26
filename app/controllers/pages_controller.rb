@@ -2,27 +2,22 @@ class PagesController < ApplicationController
  skip_before_filter :require_login
 
   def home
-      @title = "Home"
-  end
-
-  def token
+    @title = "Home"
   end
 
   def contact
-      @title = "Contact"
+    @title = "Contact"
   end
 
   def about
-      @title = "About"
+    @title = "About"
   end
 
   def admin
-      @title = "Administracion"
+    @title = "Administracion"
   end
 
-    def admin
-      @title = "Configuracion"
+  def admin
+    @title = "Configuracion"
   end
-
-
 end

@@ -1,10 +1,9 @@
 class TipopracticasController < ApplicationController
-
   before_action :set_tipopractica, :require_login, only: [:show, :edit, :update, :destroy]
 
   def index
-     if params[:registro] == nil or params[:registro] <= '0' then
-        params[:registro] = 4
+    if params[:registro] == nil or params[:registro] <= '0' then
+      params[:registro] = 4
     end
     @tipopracticas = Tipopractica.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end

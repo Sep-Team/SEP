@@ -1,9 +1,8 @@
 class EstudiantesController < ApplicationController
-
   before_action :set_estudiante,  :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
   before_filter :find_asignar_proy, :except => [ :index, :create, :new ]
-  
+ 
   def index
     if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 4
@@ -38,11 +37,10 @@ class EstudiantesController < ApplicationController
     @estudiante.destroy
   end
 
-
   private
 
   def find_asignar_proy
-      @estudiante = Estudiante.find(params[:id]) if params[:id]
+    @estudiante = Estudiante.find(params[:id]) if params[:id]
   end 
 
   private

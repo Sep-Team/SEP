@@ -1,13 +1,12 @@
 class AsignaresProyController < ApplicationController
-  
   before_action :set_asignar_proy,:require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
   before_filter :find_asignar_proy_estudiantes
   before_filter :find_actividad, :except => [ :index, :create, :new ]
   
   def index
-     if params[:registro] == nil or params[:registro] <= '0' then
-        params[:registro] = 4
+    if params[:registro] == nil or params[:registro] <= '0' then
+      params[:registro] = 4
     end
     @asignares_proy = @estudiante.asignares_proy.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
@@ -44,8 +43,7 @@ class AsignaresProyController < ApplicationController
   def find_actividad
       @asignar_proy = AsignarProy.find(params[:id]) if params[:id]
   end 
-
-
+  
   private
   
   def find_asignar_proy_estudiantes

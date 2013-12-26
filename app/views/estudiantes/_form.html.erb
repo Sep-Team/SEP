@@ -1,80 +1,80 @@
 <%= simple_form_for(@estudiante, :html => { :multipart => true, :remote => true }) do |f| %>
  <div class="user">
     <div class="modal-header">
-       <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
+      <a href="#" class="close"   onclick="$.lazybox.close()">&times;</a>
       <h4 class="modal-title"><h3>Datos Empresas</h3></h4>
-        </div><br>
-          <div class="row">
-            <div class="col-md-4">
-             PrimerNombre:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :nombre1, :label => false,  :required => true %>
-            </div>
-            <div class="col-md-4">
-              SegundoNombre:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :nombre2, :label => false,  :required => true %>
-            </div>
-            <div class="col-md-4">
-              PrimerApellido:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :apellido1, :label => false,  :required => true  %>
-           </div>
-
-           <div class="col-md-4">
-             SegundoApellido:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :apellido2, :label => false,  :required => true  %>
-            </div>
-            <div class="col-md-4">
-              Genero:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :genero, :label => false,  :required => true  %>
-            </div>
-            <div class="col-md-4">
-              Correo:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :email, :label => false,  :required => true  %>
-           </div>
-            <div class="col-md-4">
-              Tipo Documento:
-            </div>
-            <div class="col-md-6">
-               <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :sigla, :prompt => "Selecione Tipo Documento", :label => false,  :required => true %></br></br>
-           </div>
-            <div class="col-md-4">
-              Documento:
-            </div>
-            <div class="col-md-6">
-               <%= f.input :documento, :label => false,  :required => true %>
-           </div>
-            <div class="col-md-4">
-              TipoPracticas:
-            </div>
-            <div class="col-md-6">
-               <%= f.collection_select :tipopractica_id, Tipopractica.all, :id, :nombre, :prompt => "Selecione Tipo Practicas", :label => false,  :required => true %></br></br>
-           </div>
-             <div class="col-md-4">
-              Ficha:
-            </div>
-            <div class="col-md-6">
-              <%= f.collection_select :ficha_id, Ficha.all, :id, :numero, :prompt => "Selecione Fichas", :label => false,  :required => true %></br></br>
-           </div>
-             <div class="col-md-4">
-              Jefe:
-            </div>
-            <div class="col-md-6">
-             <%= f.collection_select :jefe_id, Jefe.all, :id, :nombres, :prompt => "Selecione Jefes", :label => false,  :required => true %>
-           </div>
+    </div><br>
+      <div class="row">
+        <div class="col-md-4">
+          PrimerNombre:
         </div>
-        <div class="modal-footer">
+        <div class="col-md-6">
+          <%= f.input :nombre1, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          SegundoNombre:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :nombre2, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          PrimerApellido:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :apellido1, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          SegundoApellido:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :apellido2, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Genero:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :genero, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Correo:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :email, :label => false,  :required => true  %>
+        </div>
+        <div class="col-md-4">
+          Tipo Documento:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :sigla, :prompt => "Selecione Tipo Documento", :label => false,  :required => true %></br></br>
+        </div>
+        <div class="col-md-4">
+          Documento:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :documento, :label => false,  :required => true %>
+        </div>
+        <div class="col-md-4">
+          TipoPracticas:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :tipopractica_id, Tipopractica.all, :id, :nombre, :prompt => "Selecione Tipo Practicas", :label => false,  :required => true %></br></br>
+        </div>
+        <div class="col-md-4">
+          Ficha:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :ficha_id, Ficha.all, :id, :numero, :prompt => "Selecione Fichas", :label => false,  :required => true %></br></br>
+        </div>
+        <div class="col-md-4">
+          Jefe:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :jefe_id, Jefe.all, :id, :nombres, :prompt => "Selecione Jefes", :label => false,  :required => true %>
+        </div>
+      </div>
+      <div class="modal-footer">
         <%= f.submit "guardar", :class => 'btn btn-primary' %>
         <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
       </div>
+    </div> 
 <% end %>

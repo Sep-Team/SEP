@@ -1,14 +1,12 @@
 class JefesController < ApplicationController
-
   before_action :set_jefe, :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
 
   def index
-
-     if params[:registro] == nil or params[:registro] <= '0' then
+    if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 5
     end
-     @jefes = Jefe.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+    @jefes = Jefe.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show
@@ -31,8 +29,8 @@ class JefesController < ApplicationController
   def update
     @jefe = Jefe.find(params[:id])
     render :action => :edit unless @jefe.update_attributes(jefe_params)
-  
   end
+
   def destroy
     @jefe = Jefe.find(params[:id])
     @jefe.destroy

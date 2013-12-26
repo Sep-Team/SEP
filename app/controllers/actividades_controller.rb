@@ -4,7 +4,6 @@ class ActividadesController < ApplicationController
   before_filter :find_actividad_asignares_proy
   
   def index
-
     if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 4
     end
@@ -40,8 +39,8 @@ class ActividadesController < ApplicationController
    private
   
   def find_actividad_asignares_proy
-     @asignar_proy = AsignarProy.find(params[:asignar_proy_id])
-     @actividad = Actividad.find(params[:id]) if params[:id]
+    @asignar_proy = AsignarProy.find(params[:asignar_proy_id])
+    @actividad = Actividad.find(params[:id]) if params[:id]
   end 
   private
   

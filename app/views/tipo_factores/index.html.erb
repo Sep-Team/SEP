@@ -14,26 +14,28 @@
     </div>
   </div>
   </div>
-    <table class="table table-hover"  >
-        <thead>
-            <tr>
-              <th >id</th>
-              <th >Nombres</th>
-              <th >Siglas</th> 
-              <th >Acciones</th>      
-          </tr>
-        </thead>
-        <tbody><%= render @tipo_factores %></tbody>
-        <tfoot>
-           <tr>
-              <td>
-                <%= link_to image_tag('Crud/save.png'),  new_tipo_factor_path,  :remote => true %>
-              </td>
-            </tr>
-        </tfoot>
-    </table>
-     <div id="pagination">
-      <ul class="pagination">
-        <%= will_paginate @tipo_factores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
-      </ul>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Nombres</th>
+        <th >Siglas</th> 
+        <th >Acciones</th>      
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @tipo_factores %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_tipo_factor_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <div id="pagination">
+    <ul class="pagination">
+      <%= will_paginate @tipo_factores, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+    </ul>
   </div>  

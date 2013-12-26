@@ -1,4 +1,3 @@
 class Tipodoc < ActiveRecord::Base
-
-	has_many :estudiantes
+  has_many :estudiantes
 end

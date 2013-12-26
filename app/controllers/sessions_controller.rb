@@ -5,12 +5,11 @@ class SessionsController < ApplicationController
 
   def create
   	user = login(params[:username], params[:password], params[:remember_me])
-  if user
+    if user
       redirect_back_or_to :home, :alert => "Ingreso Satisfactorio"
-
-  else
-    redirect_to :root, :alert => "Usuario o Contraseña erroneos"
-  end
+    else
+      redirect_to :root, :alert => "Usuario o Contraseña erroneos"
+    end
   end
 
   def destroy

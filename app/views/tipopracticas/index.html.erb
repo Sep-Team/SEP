@@ -14,28 +14,29 @@
     </div>
   </div>
   </div>
-    <table class="table table-hover"  >
-        <thead>
-            <tr>
-              <th >id</th>
-              <th >Nombres</th>
-              <th >Descripciones</th> 
-              <th >Acciones</th>      
-          </tr>
-        </thead>
-        <tbody><%= render @tipopracticas %></tbody>
-        <tfoot>
-           <tr>
-              <td>
-                <%= link_to image_tag('Crud/save.png'),  new_tipopractica_path,  :remote => true %>
-              </td>
-            </tr>
-        </tfoot>
-    </table>
-  </div>
+  <table class="table table-hover"  >
+    <thead>
+      <tr>
+        <th >id</th>
+        <th >Nombres</th>
+        <th >Descripciones</th> 
+        <th >Acciones</th>      
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @tipopracticas %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to image_tag('Crud/save.png'),  new_tipopractica_path,  :remote => true %>
+        </td>
+      </tr>
+    </tfoot>
   </table>
-  <div id="pagination">
-    <ul class="pagination">
-     <%= will_paginate @tipopracticas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
-    </ul>
-  </div>
+</div>
+<div id="pagination">
+  <ul class="pagination">
+    <%= will_paginate @tipopracticas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente&raquo;' %>
+  </ul>
+</div>

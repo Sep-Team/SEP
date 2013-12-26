@@ -1,11 +1,10 @@
 class EmpresasController < ApplicationController
-  
   before_action :set_empresa,  :require_login, only: [:show, :edit, :update, :destroy]
   before_filter :require_login
   
   def index
     if params[:registro] == nil or params[:registro] <= '0' then
-        params[:registro] = 3
+      params[:registro] = 3
     end
      @empresas = Empresa.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
