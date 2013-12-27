@@ -36,15 +36,19 @@ color: #080D0B;
 }
 
 #lazybox div.user{ 
-  max-width: 700px; 
+  max-width: 700px;
+
 
 }
 #lazybox div.examen{ 
   max-width: 900px;
+ 
 }
+
 
 .lazybox {
   background: transparent !important;
+
 }
 
 #lazybox_close.img {
@@ -68,13 +72,16 @@ color: #080D0B;
   border-bottom-left-radius: 20px 500px;
   border-bottom-right-radius: 500px 30px;
   border-top-right-radius: 5px 100px;
+
 }
 
 #lazybox.top {
+
   border-radius: 0px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   border: none;
+
 }
 
 #lazybox.player {
@@ -142,3 +149,4 @@ div#example{
  margin-top: -130px;
   
 }
+
