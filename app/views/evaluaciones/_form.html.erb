@@ -1,6 +1,7 @@
+ <div class="examen">
 <%= javascript_include_tag "fecha" %>
 <%= simple_form_for([@estudiante, @evaluacion], :html => { :multipart => true, :remote => true }) do |f| %>
-  <div class="examen">
+ 
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true"       onclick="$.lazybox.close()">x
       </button>  
       <ul class="nav nav-tabs">
