@@ -1,0 +1,29 @@
+<h1>Listing typecitizenes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Acronym</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @typecitizenes.each do |typecitizen| %>
+      <tr>
+        <td><%= typecitizen.name %></td>
+        <td><%= typecitizen.acronym %></td>
+        <td><%= link_to 'Show', typecitizen %></td>
+        <td><%= link_to 'Edit', edit_typecitizen_path(typecitizen) %></td>
+        <td><%= link_to 'Destroy', typecitizen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Typecitizen', new_typecitizen_path %>
