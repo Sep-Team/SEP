@@ -58,6 +58,6 @@ class AsignaresProyController < ApplicationController
   end
 
   def asignar_proy_params
-    params.require(:asignar_proy).permit(:nombre, :objetivo, :estudiante_id, :objsyproy_id, :estudiante_id)
+    params.require(:asignar_proy).permit(:nombreproyecto, :estudiante_id, :objsyproy_id, :estudiante_id)
   end
 end

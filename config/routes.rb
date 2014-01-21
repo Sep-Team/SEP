@@ -1,4 +1,8 @@
 Sep::Application.routes.draw do
+  resources :bitacoras
+
+  resources :typecitizenes
+
   resources :tipopracticas
 
   get "sessions/new"

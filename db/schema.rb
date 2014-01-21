@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203181516) do
+ActiveRecord::Schema.define(version: 20140120184005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,28 @@ ActiveRecord::Schema.define(version: 20131203181516) do
 
   add_index "asignares_proy", ["estudiante_id"], name: "index_asignares_proy_on_estudiante_id", using: :btree
   add_index "asignares_proy", ["objsyproy_id"], name: "index_asignares_proy_on_objsyproy_id", using: :btree
+
+  create_table "bitacoras", force: true do |t|
+    t.integer  "estudiante_id"
+    t.date     "fecha_inicio"
+    t.date     "fecha_fin"
+    t.string   "descripcion"
+    t.string   "objetivo"
+    t.string   "nombre"
+    t.string   "nombreproyecto"
+    t.integer  "categoria_id"
+    t.integer  "actestado_id"
+    t.integer  "asignar_proy_id"
+    t.integer  "actividad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bitacoras", ["actestado_id"], name: "index_bitacoras_on_actestado_id", using: :btree
+  add_index "bitacoras", ["actividad_id"], name: "index_bitacoras_on_actividad_id", using: :btree
+  add_index "bitacoras", ["asignar_proy_id"], name: "index_bitacoras_on_asignar_proy_id", using: :btree
+  add_index "bitacoras", ["categoria_id"], name: "index_bitacoras_on_categoria_id", using: :btree
+  add_index "bitacoras", ["estudiante_id"], name: "index_bitacoras_on_estudiante_id", using: :btree
 
   create_table "categorias", force: true do |t|
     t.string   "nombre"
@@ -236,6 +258,13 @@ ActiveRecord::Schema.define(version: 20131203181516) do
   create_table "titulaciones", force: true do |t|
     t.string   "descripcion"
     t.string   "sigla"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "typecitizenes", force: true do |t|
+    t.string   "name"
+    t.string   "acronym"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
