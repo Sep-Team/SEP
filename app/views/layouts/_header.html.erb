@@ -14,7 +14,8 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Otros<b class="     caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to('Detalle Evaluaciones', detalle_evaluaciones_path ) %></li>
+            <li><%= link_to "Nueva Bitacora",  new_bitacora_path,  :remote => true %>
+        </li>
             <li><%= link_to('Tipo Factores', tipo_factores_path) %></li>
             <li class="divider"></li>
             <li class="divider"></li>
