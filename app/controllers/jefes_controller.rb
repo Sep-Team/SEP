@@ -6,7 +6,7 @@ class JefesController < ApplicationController
     if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 5
     end
-    @jefes = Jefe.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+    @jefes = Jefe.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i).order("id")
   end
 
   def show
@@ -24,11 +24,13 @@ class JefesController < ApplicationController
   def create
     @jefe = Jefe.new(jefe_params)
     render :action => :new unless @jefe.save
+    User.create(:username => @jefe.cedula, :email => @jefe.email, :password => @jefe.cedula )
   end
 
   def update
     @jefe = Jefe.find(params[:id])
     render :action => :edit unless @jefe.update_attributes(jefe_params)
+     User.create(:username => @jefe.cedula, :email => @jefe.email, :password => @jefe.cedula )
   end
 
   def destroy
@@ -43,6 +45,6 @@ class JefesController < ApplicationController
   end
 
   def jefe_params
-      params.require(:jefe).permit(:nombres, :apellidos, :cargo, :telefono, :email, :empresa_id)
+      params.require(:jefe).permit(:nombres, :apellidos, :cedula, :tipodoc_id, :cargo, :telefono, :email, :empresa_id)
   end
 end

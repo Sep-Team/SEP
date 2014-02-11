@@ -1,6 +1,6 @@
  <div class="examen">
 <%= javascript_include_tag "fecha" %>
-<%= simple_form_for([@estudiante, @evaluacion], :html => { :multipart => true, :remote => true }) do |f| %>
+<%= simple_form_for([@evaluacion], :html => { :multipart => true, :remote => true }) do |f| %>
  
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true"       onclick="$.lazybox.close()">x
       </button>  
@@ -8,12 +8,16 @@
         <li class="active">
           <a href="#">Actitudinales y Comportamentales</a>
         </li>
+        <li class="active">
+          <a href="#">Jefe: <%= @jefe.nombres %> <%= @jefe.apellidos %></a>
+        </li>
       </ul>
+
       <div class="modal-body">
         <ul class="nav nav-tabs">
           <li class="active">
             <div class="col-md-12">
-             <%= f.collection_select :jefe_id, Jefe.all, :id, :nombres, :prompt => "Jefes", :label => false,  :required => true %>
+               <%= f.collection_select :estudiante_id, Estudiante.where(:jefe_id => @jefe.id), :id, :nombre1, :prompt => "Selecione Estudiante" %>
             </div>
           </li>
           <li class="active">
@@ -39,8 +43,7 @@
                 <th>Factores</th>
                 <th>Descripciones</th>
                 <th>Evaluación</th>
-                <th>aspectosPositivos</th>
-                <th>aspectos</th>
+                <th>Puntaje</th>
               </tr>
             </thead>
             <tbody>
@@ -50,13 +53,10 @@
                   Desarrolla relaciones interpersonales con  las personas de los diferentes niveles del ente Coformador en forma armoniosa, respetuosa  y enmarcada dentro de los principios de convivencia social.
                 </td>
                 <td>
-                  <%= f.input :relacionesinterpersona, as: :radio_buttons,  :label => false, :collection => [["Satisfactorio", true], ["NoSatisfactorio", false]], :input_html => {:class => 'span8'}  %>
+                  <%= f.input :relacionesinterpersona, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span8'}  %>
                 </td>
                 <td>
                   <%= f.input :aspectos_positivos, :label => false, :required => true  %>
-                </td>
-                <td>
-                  <%= f.input :aspectos_negativos, :label => false,  :required => true  %>
                 </td>
               </tr>
               <tr>
@@ -114,8 +114,7 @@
                 <th>Factores</th>
                 <th>Descripciones</th>
                 <th>Evaluación</th>
-                <th>aspectosPositivos</th>
-                <th>aspectos</th>
+                <th>Puntaje</th>
               </tr>
             </thead>
             <tbody>
@@ -130,10 +129,7 @@
                 <%= f.input :transferenciaconocimiento, as: :radio_buttons,  :label => false, :collection => [["Si", true], ["No", false]], :input_html => {:class => 'span8'}  %>
               </td>
               <td>
-                <%= f.text_area :aspectospositivofactortecnico, :rows => 3,  :label => false,  :required => true  %>
-              </td>
-              <td>
-                <%= f.text_area :aspectosnegativofactortecnico, :rows => 3,  :label => false,  :required => true  %>
+                <%= f.input :aspectos_positivos, :label => false, :required => true  %>
               </td>
             </tr>
             <tr>

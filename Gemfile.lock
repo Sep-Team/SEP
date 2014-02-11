@@ -33,6 +33,7 @@ GEM
     bootstrap-will_paginate (0.0.10)
       will_paginate
     builder (3.1.4)
+    cancan (1.6.10)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
@@ -173,6 +174,7 @@ DEPENDENCIES
   bcrypt-ruby
   bootstrap-datepicker-rails
   bootstrap-will_paginate
+  cancan
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails

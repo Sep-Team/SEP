@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   before_filter :require_login, :except => [ :create, :new ]
   
   def index
-    @users = User.all
+     if params[:registro] == nil or params[:registro] <= '0' then
+        params[:registro] = 4
+    end
+     @users  =  User.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i).order("id")
   end
 
   def show

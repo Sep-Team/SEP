@@ -49,6 +49,9 @@ class ActividadesController < ApplicationController
   end
 
   def actividad_params
-    params.require(:actividad).permit(:nombre, :estudiante_id, :fecha_inicio, :fecha_fin, :descripcion, :objetivo, :categoria_id, :objsyproy_id, :asignar_proy_id, :actestado_id)
+    params.require(:actividad).permit(:nombre, :estudiante_id, :fecha_inicio,
+     :fecha_fin, :descripcion, :objetivo, :categoria_id, :objsyproy_id,
+     :asignar_proy_id, :actestado_id, :actividad1, :actividad2, :actividad3,
+     :actividad4, :actividad5)
   end
 end

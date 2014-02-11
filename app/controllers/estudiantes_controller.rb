@@ -7,7 +7,7 @@ class EstudiantesController < ApplicationController
     if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 4
     end
-    @estudiantes = Estudiante.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+    @estudiantes = Estudiante.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i).order("id")
   end
 
   def show
@@ -25,11 +25,15 @@ class EstudiantesController < ApplicationController
   def create
     @estudiante = Estudiante.new(estudiante_params)
     render :action => :new unless @estudiante.save
+    #Si el Estudiante se crea exitosamente, Se crea un registro de dicho estudiante en la tabla de "Users"
+    User.create(:username => @estudiante.documento, :email => @estudiante.email, :password => @estudiante.documento )
+
   end
 
   def update
    @estudiante = Estudiante.find(params[:id])
    render :action => :edit unless @estudiante.update_attributes(estudiante_params)
+   User.create(:username => @estudiante.documento, :email => @estudiante.email, :password => @estudiante.documento )
   end
 
   def destroy
@@ -50,6 +54,6 @@ class EstudiantesController < ApplicationController
   end
 
   def estudiante_params
-    params.require(:estudiante).permit(:nombre1, :nombre2, :apellido1, :apellido2, :email, :genero, :documento, :tipopractica_id, :ficha_id, :jefe_id, :tipodoc_id)
+    params.require(:estudiante).permit(:email, :nombre1, :nombre2, :apellido1, :apellido2, :email, :genero, :documento, :tipopractica_id, :ficha_id, :jefe_id, :tipodoc_id)
   end
 end

@@ -3,7 +3,7 @@
 	<td><%= estudiante.nombre1 %></td>
 	<td><%= estudiante.apellido1 %></td>
 	<td><%= estudiante.apellido2 %></td>
-	<td><%= estudiante.genero %></td>	
+	<td><%= estudiante.genero %></td>		
     <td><%= estudiante.tipodoc.sigla %></td>
 	<td><%= estudiante.documento %></td>
 	<td><%= estudiante.tipopractica.nombre %></td>
@@ -13,7 +13,7 @@
 		<%= link_to  image_tag('Crud/mostrar.png'), estudiante, :remote => true, :class => 'btn btn-mini' %>
         <%= link_to image_tag('Crud/editar1.png', :title => "Editar Equipos"), edit_estudiante_path(estudiante), :remote => true, :class => 'btn btn-mini'%>
         <%= link_to image_tag('Crud/asignar.png'), estudiante_asignares_proy_path(estudiante), :class => 'btn btn-mini', :rel => "tooltip", :title => "Asignar Proyecto" %>
-        <%= link_to image_tag('Crud/student.png'), estudiante_evaluaciones_path(estudiante), :class => 'btn btn-mini', :rel => "tooltip", :title => "Ingresar Evaluaciones" %>
+    
 	</td>
 </tr>
 

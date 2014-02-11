@@ -1,9 +1,12 @@
 Sep::Application.routes.draw do
+  resources :assignments
+
+  resources :roles
+
   resources :bitacoras
 
-  resources :typecitizenes
-
   resources :tipopracticas
+  resources :evaluaciones
 
   get "sessions/new"
   get "sessions/create"
@@ -40,11 +43,6 @@ Sep::Application.routes.draw do
   resources :asignares_proy do 
     resources :actividades  
   end
-    resources :estudiantes do
-    resources :evaluaciones
-  end
-
-
 
  
 

@@ -74,6 +74,11 @@ a:hover {
 h1 {
   margin: 0.67em 0;
   font-size: 2em;
+  text-align: center;
+}
+
+p{
+text-align : justify;
 }
 
 abbr[title] {
@@ -4968,7 +4973,9 @@ a.list-group-item.active > .badge,
   line-height: 2.1428571435;
   color: inherit;
   background-color: #eeeeee;
-  margin-top: -100px;
+  margin-top: 50px;
+  opacity: 1.4;
+  width: 60%;
 }
 
 .jumbotron h1 {
@@ -5044,6 +5051,16 @@ a.thumbnail:focus {
   margin-top: 0;
   color: inherit;
 }
+
+h4{
+  text-align: center;
+  color: fff;
+}
+h5{
+  text-align: center;
+  color: fff;
+}
+
 
 .alert .alert-link {
   font-weight: bold;

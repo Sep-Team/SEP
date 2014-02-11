@@ -31,6 +31,18 @@ body{
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FCFFFD', endColorstr='#DDE0DE', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+/*background: #D0D0D0url('Principal.jpg') repeat fixed top center;*/
+}
+
+body#fondo{
+   background-image: url('fondosep.png');
+ 
+}
+
+body#bitacora{
+   background-image: url('bitacora.png');
+   background-size: 100%;
+ 
 }
 
 #lazybox div.user{ 
@@ -38,27 +50,12 @@ body{
 
 }
 #lazybox div.examen{ 
-  max-width: 900px;
+  width: 900px;
  
 }
 
-#lazybox div.bitacora{ 
-  width: 1000px;
-  height: 600px;
-  color: #080D0B;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #DDE0DE;
-  *background-color: #DDE0DE;
-  background-image: -moz-linear-gradient(top, #FCFFFD, #DDE0DE);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FCFFFD), to(#DDE0DE));
-  background-image: -webkit-linear-gradient(top, #FCFFFD, #DDE0DE);
-  background-image: -o-linear-gradient(top, #FCFFFD, #DDE0DE);
-  background-image: linear-gradient(to bottom, #FCFFFD, #DDE0DE);
-  background-repeat: repeat-x;
-  border-color: #DDE0DE;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FCFFFD', endColorstr='#DDE0DE', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+body#fondobitacora{ 
+  background-image: url('bitacora.png');
   
 }
 
@@ -67,6 +64,12 @@ body{
 
 }
 
+
+#butto{
+  left: 50px;
+  margin-top: -50px;
+  
+}
 #lazybox_close.img {
   background: url('close.png') no-repeat;
   width: 30px;
@@ -165,4 +168,15 @@ div#example{
  margin-top: -130px;
   
 }
+
+#color{
+  color: #000;
+}
+#login{
+  color: #000;
+  margin-top:-100px; 
+  left: 150px;
+}
+
+
 

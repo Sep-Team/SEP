@@ -60,6 +60,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'evaluacion', 'evaluaciones'
   inflect.irregular 'detalleevaluacion', 'detalleevaluaciones'
   inflect.irregular 'novedad', 'novedades'
+  inflect.irregular 'assignment', 'assignments'
 end
 
 

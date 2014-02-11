@@ -7,6 +7,11 @@ class CreateBitacoras < ActiveRecord::Migration
       t.string :descripcion
       t.string :objetivo
       t.string :nombre
+      t.string :actividad1
+      t.string :actividad2
+      t.string :actividad3
+      t.string :actividad4
+      t.string :actividad5
       t.string :nombreproyecto
       t.references :categoria, index: true
       t.references :actestado, index: true

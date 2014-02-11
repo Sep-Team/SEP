@@ -18,6 +18,18 @@
           <%= f.input :apellidos, :label => false,  :required => true %>
         </div>
         <div class="col-md-4">
+          TipoDocumentos:
+        </div>
+        <div class="col-md-6">
+          <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :sigla, :prompt => "TipoDocumentos", :label => false,  :required => true %></br></br>
+        </div>
+        <div class="col-md-4">
+          Cedula:
+        </div>
+        <div class="col-md-6">
+          <%= f.input :cedula, :label => false,  :required => true   %>
+        </div>
+        <div class="col-md-4">
           Cargo:
         </div>
         <div class="col-md-6">

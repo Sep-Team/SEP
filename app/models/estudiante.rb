@@ -7,6 +7,7 @@ class Estudiante < ActiveRecord::Base
   has_many :asignares_proy
   has_many :evaluaciones
   has_many :bitacoras
+
   def self.search(search)
     where("nombre1 like '%#{search}%' or nombre2 like '%#{search}%'")
   end

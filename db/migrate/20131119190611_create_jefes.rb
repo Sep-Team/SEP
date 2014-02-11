@@ -4,9 +4,11 @@ class CreateJefes < ActiveRecord::Migration
       t.string :nombres
       t.string :apellidos
       t.string :cargo
+      t.string :cedula
       t.string :telefono
       t.string :email
       t.references :empresa, index: true
+      t.references :tipodoc, index: true
 
       t.timestamps
     end

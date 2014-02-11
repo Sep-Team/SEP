@@ -35,6 +35,7 @@ gem 'rails3-jquery-autocomplete'
 gem 'mime-types', :require => 'mime/types'
 gem 'remotipart'
  gem 'bootstrap-datepicker-rails'
+ gem "cancan"
 
 
 group :production do

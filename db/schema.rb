@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120184005) do
+ActiveRecord::Schema.define(version: 20140211200054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20140120184005) do
     t.string   "descripcion"
     t.string   "objetivo"
     t.string   "nombre"
+    t.string   "actividad1"
+    t.string   "actividad2"
+    t.string   "actividad3"
     t.integer  "categoria_id"
     t.integer  "actestado_id"
     t.integer  "asignar_proy_id"
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20140120184005) do
   end
 
   create_table "asignares_proy", force: true do |t|
-    t.string   "nombre"
+    t.string   "nombreproyecto"
     t.string   "objetivo"
     t.integer  "estudiante_id"
     t.integer  "objsyproy_id"
@@ -59,6 +62,16 @@ ActiveRecord::Schema.define(version: 20140120184005) do
   add_index "asignares_proy", ["estudiante_id"], name: "index_asignares_proy_on_estudiante_id", using: :btree
   add_index "asignares_proy", ["objsyproy_id"], name: "index_asignares_proy_on_objsyproy_id", using: :btree
 
+  create_table "assignments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assignments", ["role_id"], name: "index_assignments_on_role_id", using: :btree
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id", using: :btree
+
   create_table "bitacoras", force: true do |t|
     t.integer  "estudiante_id"
     t.date     "fecha_inicio"
@@ -66,6 +79,11 @@ ActiveRecord::Schema.define(version: 20140120184005) do
     t.string   "descripcion"
     t.string   "objetivo"
     t.string   "nombre"
+    t.string   "actividad1"
+    t.string   "actividad2"
+    t.string   "actividad3"
+    t.string   "actividad4"
+    t.string   "actividad5"
     t.string   "nombreproyecto"
     t.integer  "categoria_id"
     t.integer  "actestado_id"
@@ -199,14 +217,17 @@ ActiveRecord::Schema.define(version: 20140120184005) do
     t.string   "nombres"
     t.string   "apellidos"
     t.string   "cargo"
+    t.string   "cedula"
     t.string   "telefono"
     t.string   "email"
     t.integer  "empresa_id"
+    t.integer  "tipodoc_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "jefes", ["empresa_id"], name: "index_jefes_on_empresa_id", using: :btree
+  add_index "jefes", ["tipodoc_id"], name: "index_jefes_on_tipodoc_id", using: :btree
 
   create_table "novedades", force: true do |t|
     t.date     "fecha_ocurrencia"
@@ -233,6 +254,12 @@ ActiveRecord::Schema.define(version: 20140120184005) do
 
   add_index "programas", ["centro_id"], name: "index_programas_on_centro_id", using: :btree
   add_index "programas", ["titulacion_id"], name: "index_programas_on_titulacion_id", using: :btree
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tipo_factores", force: true do |t|
     t.string   "nombre"
@@ -262,13 +289,6 @@ ActiveRecord::Schema.define(version: 20140120184005) do
     t.datetime "updated_at"
   end
 
-  create_table "typecitizenes", force: true do |t|
-    t.string   "name"
-    t.string   "acronym"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "username",         null: false
     t.string   "email"
@@ -276,6 +296,7 @@ ActiveRecord::Schema.define(version: 20140120184005) do
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
   end
 
 end
