@@ -7,7 +7,8 @@ class EstudiantesController < ApplicationController
     if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 4
     end
-    @estudiantes = Estudiante.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i).order("id")
+    @estudiante = Estudiante.find_by_documento(current_user.username)
+    @estudiantes = Estudiante.where(:id => @estudiante.id).search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i).order("id")
   end
 
   def show

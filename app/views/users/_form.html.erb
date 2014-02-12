@@ -32,7 +32,7 @@
     </div>
   </div>
    <p>  
-            <% if  can? :update, User %>
+    <% if can? :manage, User %>
                 <div class="well well-small">
                       <% for role in Role.all %>
                         <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>

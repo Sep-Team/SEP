@@ -3,14 +3,21 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    if user
-    if user.has_role? :admin
-        can :manage, :all  
-    else
+      user ||= User.new
+      if user
+       if user.has_role? :admin
         can :manage, :all
-    end     
-    else
-    can :read, :all
+      elsif user.has_role? :jefe
+        can :manage, [Evaluacion]
+      elsif user.has_role? :aprendiz
+        can :manage, [Estudiante, Bitacora, Actividad, AsignarProy, User]
+
+      end
     end
   end
 end
+
+
+   
+ 
+

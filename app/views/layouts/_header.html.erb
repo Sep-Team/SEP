@@ -5,20 +5,23 @@
       <ul class="nav navbar-nav">
         <a class="navbar-brand" href="home">SEP</a>
         <% if current_user %>
+        <% if current_user.role == "admin" %>
           <li class="active"><%= link_to('Admin', pages_admin_path) %></li>
-        <% end %>  
-        <li ><%= link_to('Empresas', empresas_path ) %></li>
-        <li><%= link_to('Estudiantes', estudiantes_path ) %></li>
-        <li><%= link_to('Jefes', jefes_path ) %></li>
-         <% if current_user %>
+          <% end %>
+          
+         <% if current_user.role == "aprendiz" %>
           <li><%= link_to "Nueva Bitacora",  new_bitacora_path %></li>
-           <% if current_user %>
+          <li><%= link_to('Estudiantes', estudiantes_path ) %></li>
+          <% end %>
+
+           <% if current_user.role == "jefe" %>
+           <li ><%= link_to('Empresas', empresas_path ) %></li>
+           <li><%= link_to('Jefes', jefes_path ) %></li>
           <li><%= link_to 'RealizarEvaluaciones', new_evaluacion_path, :remote => true  %></li>
            <% end %> 
-           <% if current_user %> 
-          <li><%= link_to "Editar Usuario", edit_user_path(current_user.id), :remote => true %></li>
-          <% end %> 
-        <% end %>
+
+          <li><%= link_to "Editar Usuario", edit_user_path(current_user.id), :remote => true %></li> 
+      <% end %> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">

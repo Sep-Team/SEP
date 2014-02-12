@@ -3,10 +3,12 @@ class EmpresasController < ApplicationController
   before_filter :require_login
   
   def index
+
     if params[:registro] == nil or params[:registro] <= '0' then
       params[:registro] = 3
     end
-     @empresas = Empresa.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
+     @jefe = Jefe.find_by_cedula(current_user.username)
+     @empresas = Empresa.where(:id => @jefe.empresa_id).search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i)
   end
 
   def show

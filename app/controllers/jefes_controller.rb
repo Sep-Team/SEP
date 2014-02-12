@@ -6,7 +6,8 @@ class JefesController < ApplicationController
     if params[:registro] == nil or params[:registro] <= '0' then
         params[:registro] = 5
     end
-    @jefes = Jefe.search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i).order("id")
+    @jefe = Jefe.find_by_cedula(current_user.username)
+    @jefes = Jefe.where(:id => @jefe.id).search(params[:buscar]).page(params[:page]).per_page(params[:registro].to_i).order("id")
   end
 
   def show
